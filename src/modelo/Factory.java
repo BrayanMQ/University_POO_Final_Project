@@ -9,10 +9,10 @@ package modelo;
  *
  * @author Ronny
  */
-public interface Factory {
+public interface Factory <T> {
     
-    public Estudiante crear(String pCarrera, String pCedula, 
-            String pCorreoEstudiante, boolean pUniversidadPublica, String pNombre, 
-            String pTelefono, String pUniversidadDato);
+    public T crear(String pDato1, String pDato2, 
+            String pDato3, boolean pDato4, String pDato5, 
+            String pDato6, String pDato7);
     
 }

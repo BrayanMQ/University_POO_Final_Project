@@ -73,13 +73,13 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rSButtonRiple4" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="btn_atras" min="-2" pref="40" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_registrarLugar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                                      <Component id="rSButtonRiple3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btn_registrar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="83" max="32767" attributes="0"/>
@@ -87,21 +87,22 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rSMTextFull1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="rSMTextFull3" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="txt_nombre" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txt_direccion" alignment="1" max="32767" attributes="0"/>
                                   <Component id="txt_correo" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txt_telefono" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_requiere" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="rSSwitch1" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="checkB_requiere" min="-2" pref="70" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_tipoLugar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="rSComboMetro1" pref="228" max="32767" attributes="0"/>
+                                      <Component id="cmbx_tipoDeLugar" pref="228" max="32767" attributes="0"/>
                                   </Group>
+                                  <Component id="lbl_error" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -114,36 +115,38 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="rSButtonRiple4" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="jLabel3" max="32767" attributes="0"/>
+                          <Component id="btn_atras" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="lbl_registrarLugar" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="rSMTextFull1" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_nombre" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="rSMTextFull3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_direccion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txt_telefono" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txt_correo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel4" max="32767" attributes="0"/>
-                          <Component id="rSComboMetro1" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="lbl_tipoLugar" max="32767" attributes="0"/>
+                          <Component id="cmbx_tipoDeLugar" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="rSSwitch1" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="checkB_requiere" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="lbl_requiere" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
-                      <Component id="rSButtonRiple3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lbl_error" pref="28" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_registrar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="lbl_registrarLugar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="1"/>
@@ -154,7 +157,7 @@
                 <Property name="text" type="java.lang.String" value="Registrar Lugar"/>
               </Properties>
             </Component>
-            <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple3">
+            <Component class="rojeru_san.RSButtonRiple" name="btn_registrar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="99" red="0" type="rgb"/>
@@ -165,8 +168,11 @@
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_registrarActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="rojeru_san.RSMTextFull" name="rSMTextFull1">
+            <Component class="rojeru_san.RSMTextFull" name="txt_nombre">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="99" red="0" type="rgb"/>
@@ -180,7 +186,7 @@
                 <Property name="placeholder" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
-            <Component class="rojeru_san.RSMTextFull" name="rSMTextFull3">
+            <Component class="rojeru_san.RSMTextFull" name="txt_direccion">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="99" red="0" type="rgb"/>
@@ -222,7 +228,7 @@
                 <Property name="placeholder" type="java.lang.String" value="Correo"/>
               </Properties>
             </Component>
-            <Component class="rojerusan.RSComboMetro" name="rSComboMetro1">
+            <Component class="rojerusan.RSComboMetro" name="cmbx_tipoDeLugar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -243,7 +249,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="lbl_tipoLugar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="1"/>
@@ -255,7 +261,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="lbl_requiere">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="1"/>
@@ -266,7 +272,7 @@
                 <Property name="text" type="java.lang.String" value="Requiere...."/>
               </Properties>
             </Component>
-            <Container class="rojerusan.RSSwitch" name="rSSwitch1">
+            <Container class="rojerusan.RSSwitch" name="checkB_requiere">
               <Properties>
                 <Property name="activado" type="boolean" value="false"/>
                 <Property name="colorFondoActivado" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -279,19 +285,18 @@
                 <Property name="useNullLayout" type="boolean" value="true"/>
               </Layout>
             </Container>
-            <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple4">
+            <Component class="rojeru_san.RSButtonRiple" name="btn_atras">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/vista/iconos/round_arrow_back_white_18dp.png"/>
                 </Property>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_error">
             </Component>
           </SubComponents>
         </Container>

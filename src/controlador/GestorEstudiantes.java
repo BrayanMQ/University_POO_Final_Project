@@ -16,12 +16,11 @@ public class GestorEstudiantes {
         EstudianteFactory crearEstudiante = new EstudianteFactory();
         
         //Estudiante posible a insertar
-        Estudiante estudiante = crearEstudiante.crear(pCarrera, pCedula, 
-                pCorreoEstudiante, pUniversidadPublica, pNombre, 
-                pTelefono, pUniversidadDato);
+        Estudiante estudiante = (Estudiante) crearEstudiante.crear(pCarrera, pCedula, 
+                pCorreoEstudiante, pUniversidadPublica, pNombre, pTelefono, pUniversidadDato);
         
         //Si el estudiante no está en lista, lo agrega
-        if (!Controlador.getSingletonInstance().getListaEstudiantesRegistrados().contains(estudiante)) {
+        if (buscarEstudiante(pCedula) == null) {
             
             Controlador.getSingletonInstance().getListaEstudiantesRegistrados().add(estudiante);
             return true;
@@ -32,7 +31,7 @@ public class GestorEstudiantes {
     
         public boolean modificarEstudiante(String pCarrera, String pCedula, 
             String pCorreoEstudiante, String pNombre, 
-            String pTelefono, String pUniversidadDato, boolean pUniversidadPublica){
+            String pTelefono, String pUniversidadDato, boolean pUniversidadPublica, String pDireccion){
         
             for (int i = 0; i < Controlador.getSingletonInstance().getListaEstudiantesRegistrados().size(); i++) {
                 if (Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).getCedula() == Integer.parseInt(pCedula)) {
@@ -55,7 +54,7 @@ public class GestorEstudiantes {
         EstudianteFactory crearEstudiante = new EstudianteFactory();
         
         //Estudiante posible a insertar
-        Estudiante estudiante = crearEstudiante.crear(pCarrera, pCedula, 
+        Estudiante estudiante = (Estudiante)crearEstudiante.crear(pCarrera, pCedula, 
                 pCorreoEstudiante, pUniversidadPublica, pNombre, 
                 pTelefono, pUniversidadDato);
         

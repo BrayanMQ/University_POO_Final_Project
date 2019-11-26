@@ -215,7 +215,7 @@
                           <Component id="btn_modificarEstudiante" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btn_eliminarEstudiante" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                          <EmptySpace pref="15" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -243,6 +243,9 @@
                     </Property>
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_registrarLugarActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="rojeru_san.RSButtonRiple" name="btn_modificarLugar">
                   <Properties>

@@ -98,6 +98,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btn_registrarLugar.setText("Registrar");
         btn_registrarLugar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrarLugar.setFocusPainted(false);
+        btn_registrarLugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registrarLugarActionPerformed(evt);
+            }
+        });
 
         btn_modificarLugar.setBackground(new java.awt.Color(0, 153, 51));
         btn_modificarLugar.setText("Modificar");
@@ -178,7 +183,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addComponent(btn_modificarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_eliminarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -349,6 +354,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
              }
         }     
     }//GEN-LAST:event_btn_modificarEstudianteActionPerformed
+
+    private void btn_registrarLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarLugarActionPerformed
+        new RegistrarLugar(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_btn_registrarLugarActionPerformed
 
     /**
      * @param args the command line arguments

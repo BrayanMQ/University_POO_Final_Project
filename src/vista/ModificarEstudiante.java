@@ -46,15 +46,15 @@ public class ModificarEstudiante extends javax.swing.JDialog {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        txt_Modificar = new rojeru_san.RSButtonRiple();
+        lbl_modificarEstudiante = new javax.swing.JLabel();
+        btn_Modificar = new rojeru_san.RSButtonRiple();
         txt_nombre = new rojeru_san.RSMTextFull();
         txt_cedula = new rojeru_san.RSMTextFull();
         txt_correoEstudiante = new rojeru_san.RSMTextFull();
         txt_telefono = new rojeru_san.RSMTextFull();
         txt_carrera = new rojeru_san.RSMTextFull();
         checkB_universidadPublica = new rojerusan.RSSwitch();
-        jLabel4 = new javax.swing.JLabel();
+        lbl_universidadPublica = new javax.swing.JLabel();
         txt_universidad_P_P = new rojeru_san.RSMTextFull();
         btn_Atras = new rojeru_san.RSButtonRiple();
         txt_direccion = new rojeru_san.RSMTextFull();
@@ -66,17 +66,17 @@ public class ModificarEstudiante extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel3.setText("Modificar Estudiante");
+        lbl_modificarEstudiante.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lbl_modificarEstudiante.setForeground(new java.awt.Color(0, 153, 51));
+        lbl_modificarEstudiante.setText("Modificar Estudiante");
 
-        txt_Modificar.setBackground(new java.awt.Color(0, 153, 51));
-        txt_Modificar.setText("Modificar");
-        txt_Modificar.setColorHover(new java.awt.Color(0, 102, 51));
-        txt_Modificar.setFocusPainted(false);
-        txt_Modificar.addActionListener(new java.awt.event.ActionListener() {
+        btn_Modificar.setBackground(new java.awt.Color(0, 153, 51));
+        btn_Modificar.setText("Modificar");
+        btn_Modificar.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_Modificar.setFocusPainted(false);
+        btn_Modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_ModificarActionPerformed(evt);
+                btn_ModificarActionPerformed(evt);
             }
         });
 
@@ -109,9 +109,9 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         checkB_universidadPublica.setColorFondoActivado(new java.awt.Color(0, 153, 51));
         checkB_universidadPublica.setFocusable(false);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel4.setText("Universidad Pública");
+        lbl_universidadPublica.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbl_universidadPublica.setForeground(new java.awt.Color(0, 153, 51));
+        lbl_universidadPublica.setText("Universidad Pública");
 
         txt_universidad_P_P.setForeground(new java.awt.Color(0, 153, 51));
         txt_universidad_P_P.setBordeColorFocus(new java.awt.Color(0, 153, 51));
@@ -137,33 +137,31 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_correoEstudiante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_telefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_carrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_universidad_P_P, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_cedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel3)
-                        .addGap(0, 48, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_correoEstudiante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_telefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_carrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_universidad_P_P, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(btn_Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(lbl_modificarEstudiante))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(lbl_universidadPublica)
                                 .addGap(18, 18, 18)
-                                .addComponent(checkB_universidadPublica, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txt_cedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(checkB_universidadPublica, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 48, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addComponent(txt_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -172,7 +170,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn_Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbl_modificarEstudiante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -188,13 +186,13 @@ public class ModificarEstudiante extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(checkB_universidadPublica, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbl_universidadPublica, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_universidad_P_P, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -230,7 +228,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ModificarActionPerformed
+    private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         boolean error = false;
         String mensajeError = "";
         lbl_error.setText("");
@@ -277,17 +275,18 @@ public class ModificarEstudiante extends javax.swing.JDialog {
             if (!error) {
                 if (!Controlador.getSingletonInstance().getGestorEstudiantes().modificarEstudiante(txt_carrera.getText(),
                     txt_cedula.getText(), txt_correoEstudiante.getText(), txt_nombre.getText(), txt_telefono.getText(),
-                    txt_universidad_P_P.getText(), checkB_universidadPublica.isActivado())) {
+                    txt_universidad_P_P.getText(), checkB_universidadPublica.isActivado(), txt_direccion.getText())) {
                 mensajeError += "El estudiante ya está registrado.\n";
                 lbl_error.setText(mensajeError);
             }else{
                 JOptionPane.showMessageDialog(this, "Se registró correctamente al estudiante.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
             }
         }
-        this.dispose();
+        
 
         }
-    }//GEN-LAST:event_txt_ModificarActionPerformed
+    }//GEN-LAST:event_btn_ModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,13 +332,13 @@ public class ModificarEstudiante extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButtonRiple btn_Atras;
+    private rojeru_san.RSButtonRiple btn_Modificar;
     private rojerusan.RSSwitch checkB_universidadPublica;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbl_error;
-    private rojeru_san.RSButtonRiple txt_Modificar;
+    private javax.swing.JLabel lbl_modificarEstudiante;
+    private javax.swing.JLabel lbl_universidadPublica;
     private rojeru_san.RSMTextFull txt_carrera;
     private rojeru_san.RSMTextFull txt_cedula;
     private rojeru_san.RSMTextFull txt_correoEstudiante;

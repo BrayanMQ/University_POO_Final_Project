@@ -122,7 +122,6 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
         });
 
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
         btn_atras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_atras.setFocusPainted(false);
 
@@ -298,9 +297,10 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
                 lbl_error.setText(mensajeError);
             }else{
                 JOptionPane.showMessageDialog(this, "Se registró correctamente al estudiante.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
             }
         }
-        this.dispose();
+        
 
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
