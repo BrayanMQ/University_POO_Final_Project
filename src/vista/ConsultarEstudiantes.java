@@ -5,6 +5,11 @@
  */
 package vista;
 
+import controlador.Controlador;
+import java.util.ArrayList;
+import modelo.Estudiante;
+
+
 /**
  *
  * @author dark1
@@ -30,12 +35,12 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        rSButtonRiple3 = new rojeru_san.RSButtonRiple();
-        rSButtonRiple4 = new rojeru_san.RSButtonRiple();
-        rSComboMetro1 = new rojerusan.RSComboMetro();
+        lbl_consultarEstudiantes = new javax.swing.JLabel();
+        btn_consultar = new rojeru_san.RSButtonRiple();
+        btn_atras = new rojeru_san.RSButtonRiple();
+        cmbx_consultar = new rojerusan.RSComboMetro();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetro1 = new rojerusan.RSTableMetro();
+        jTable_tabla = new rojerusan.RSTableMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -43,42 +48,46 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel3.setText("Consultar Estudiantes");
+        lbl_consultarEstudiantes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lbl_consultarEstudiantes.setForeground(new java.awt.Color(0, 153, 51));
+        lbl_consultarEstudiantes.setText("Consultar Estudiantes");
 
-        rSButtonRiple3.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple3.setText("Consultar");
-        rSButtonRiple3.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple3.setFocusPainted(false);
+        btn_consultar.setBackground(new java.awt.Color(0, 153, 51));
+        btn_consultar.setText("Consultar");
+        btn_consultar.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_consultar.setFocusPainted(false);
+        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarActionPerformed(evt);
+            }
+        });
 
-        rSButtonRiple4.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
-        rSButtonRiple4.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple4.setFocusPainted(false);
+        btn_atras.setBackground(new java.awt.Color(0, 153, 51));
+        btn_atras.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_atras.setFocusPainted(false);
 
-        rSComboMetro1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos", "Horas Completadas", "Sin Horas Registradas", "Con Horas en Proceso" }));
-        rSComboMetro1.setColorArrow(new java.awt.Color(0, 153, 51));
-        rSComboMetro1.setColorBorde(new java.awt.Color(0, 153, 51));
-        rSComboMetro1.setColorFondo(new java.awt.Color(0, 153, 51));
+        cmbx_consultar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos", "Horas Completadas", "Con Horas en Proceso" }));
+        cmbx_consultar.setColorArrow(new java.awt.Color(0, 153, 51));
+        cmbx_consultar.setColorBorde(new java.awt.Color(0, 153, 51));
+        cmbx_consultar.setColorFondo(new java.awt.Color(0, 153, 51));
 
-        rSTableMetro1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cédula", "Nombre", "Correo", "Teléfono", "Lugar", "Horas"
             }
         ));
-        rSTableMetro1.setColorBackgoundHead(new java.awt.Color(0, 153, 51));
-        rSTableMetro1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro1.setColorFilasForeground1(new java.awt.Color(0, 153, 51));
-        rSTableMetro1.setColorFilasForeground2(new java.awt.Color(0, 153, 51));
-        rSTableMetro1.setColorSelBackgound(new java.awt.Color(0, 153, 51));
-        jScrollPane1.setViewportView(rSTableMetro1);
+        jTable_tabla.setColorBackgoundHead(new java.awt.Color(0, 153, 51));
+        jTable_tabla.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        jTable_tabla.setColorFilasForeground1(new java.awt.Color(0, 153, 51));
+        jTable_tabla.setColorFilasForeground2(new java.awt.Color(0, 153, 51));
+        jTable_tabla.setColorSelBackgound(new java.awt.Color(0, 153, 51));
+        jScrollPane1.setViewportView(jTable_tabla);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -89,13 +98,13 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(rSComboMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbx_consultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_consultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel3)
+                        .addComponent(lbl_consultarEstudiantes)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -104,13 +113,13 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btn_atras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_consultarEstudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cmbx_consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -145,6 +154,19 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
+        //DefaultTableModel modelo = (DefaultTableModel) Jdialog1.jTable1.getModel();
+        ArrayList<Estudiante> listaEstudiantes = Controlador.getSingletonInstance().getListaEstudiantesRegistrados();
+ 
+//        for (Estudiante estudiante : listaEstudiantes) {
+//            String lugar = Controlador.getSingletonInstance().estudiante.getLugarServicioSocial()
+//            
+//            Object filaNueva[] = {estudiante.getCedula(), estudiante.getNombre(), estudiante.getCorreo(),
+//                estudiante.getTelefono(), };
+//            modelo.addRow(filaNueva);
+//        }
+    }//GEN-LAST:event_btn_consultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,13 +212,13 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
+    private rojeru_san.RSButtonRiple btn_atras;
+    private rojeru_san.RSButtonRiple btn_consultar;
+    private rojerusan.RSComboMetro cmbx_consultar;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private rojeru_san.RSButtonRiple rSButtonRiple3;
-    private rojeru_san.RSButtonRiple rSButtonRiple4;
-    private rojerusan.RSComboMetro rSComboMetro1;
-    private rojerusan.RSTableMetro rSTableMetro1;
+    private rojerusan.RSTableMetro jTable_tabla;
+    private javax.swing.JLabel lbl_consultarEstudiantes;
     // End of variables declaration//GEN-END:variables
 }
