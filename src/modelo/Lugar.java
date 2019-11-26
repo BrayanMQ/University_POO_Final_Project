@@ -71,13 +71,10 @@ public abstract class Lugar implements IConstants{
     public void setListaEstudiantes(ArrayList<Integer> listaEstudiantes) {
         this.listaEstudiantes = listaEstudiantes;
     }
-
-    public int getCuposDisponibles() {
-        return cuposDisponibles;
-    }
     
     public int getCuposRestantes(){
-        return cuposDisponibles - listaEstudiantes.size();
+        this.cuposDisponibles = cuposDisponibles - listaEstudiantes.size();
+        return cuposDisponibles;
     }
 
     public void setCuposDisponibles(int cuposDisponibles) {

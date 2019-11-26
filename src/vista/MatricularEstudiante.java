@@ -5,6 +5,7 @@
  */
 package vista;
 import controlador.Controlador;
+import java.awt.Frame;
 import javax.swing.JOptionPane;
 import modelo.Email;
 import modelo.Estudiante;
@@ -78,6 +79,11 @@ public class MatricularEstudiante extends javax.swing.JDialog {
         btn_consultarLugares.setText("Consultar Lugares");
         btn_consultarLugares.setColorHover(new java.awt.Color(0, 102, 51));
         btn_consultarLugares.setFocusPainted(false);
+        btn_consultarLugares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarLugaresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,6 +183,10 @@ public class MatricularEstudiante extends javax.swing.JDialog {
         
         
     }//GEN-LAST:event_btn_guardarActionPerformed
+
+    private void btn_consultarLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarLugaresActionPerformed
+        new ConsultarLugares((Frame) getParent(), rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_btn_consultarLugaresActionPerformed
 
     /**
      * @param args the command line arguments

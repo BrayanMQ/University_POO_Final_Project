@@ -13,9 +13,9 @@ import vista.PantallaPrincipal;
 public class ProyectoFinalPOO {
 
     public static void main(String[] args) throws IOException, FileNotFoundException, CsvValidationException {
-        
-        PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-        pantallaPrincipal.setVisible(true);
+        new PantallaPrincipal().setVisible(true);
+//        PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+//        pantallaPrincipal.setVisible(true);
         
     }
     

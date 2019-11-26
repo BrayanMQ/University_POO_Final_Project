@@ -45,9 +45,15 @@ public abstract class Estudiante implements IConstants{
         return carrera;
     }
 
-    public int getCantidadHorasCompletadas() {
-        return cantidadHorasCompletadas - HORAS_DE_SERVICIO;
+    public int getCantidadFaltantes() {
+        return HORAS_DE_SERVICIO - cantidadHorasCompletadas;
     }
+
+    public int getCantidadHorasCompletadas() {
+        return cantidadHorasCompletadas;
+    }
+    
+    
 
     public int getLugarServicioSocial() {
         return lugarServicioSocial;

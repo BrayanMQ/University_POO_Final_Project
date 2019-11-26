@@ -1,8 +1,12 @@
 
 package controlador;
 
+import modelo.Albergue;
+import modelo.Asilo;
+import modelo.InstitucionEducativa;
 import modelo.Lugar;
 import modelo.LugarFactory;
+import modelo.Municipalidad;
 
 public class GestorLugares {
     
@@ -58,4 +62,34 @@ public class GestorLugares {
         return false;
     }
 
+    
+    public String obtenerRequisito(Lugar pLugar){
+        if (pLugar instanceof Municipalidad) {
+            
+            if (((Municipalidad)pLugar).isRequiereConocimiento()) {
+                return "Requiere conocimiento en ofimática.";
+            }else{
+                return "No requiere conocimiento en ofimática.";
+            }
+        }else if (pLugar instanceof InstitucionEducativa) {
+            if (((InstitucionEducativa)pLugar).isRequiereConocimiento()) {
+                return "Requiere mínimo de horas.";
+            }else{
+                return "No requiere mínimo de horas.";
+            }
+        }else if(pLugar instanceof Asilo){
+            if (((Asilo)pLugar).isRequiereExperiencia()) {
+                return "Requiere experiencia previa con personas.";
+            }else{
+                return "No requiere experiencia previa con personas.";
+            }
+        }else if (pLugar instanceof Albergue) {
+            if (((Albergue)pLugar).isRequiereExperiencia()) {
+                return "Requiere experiencia previa con personas.";
+            }else{
+                return "No requiere experiencia previa con personas.";
+            }
+        }
+        return "Error.";
+    }
 }

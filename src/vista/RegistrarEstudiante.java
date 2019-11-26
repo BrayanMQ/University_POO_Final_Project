@@ -122,8 +122,7 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
         });
 
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
-        btn_atras.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_atras.setColorHover(new java.awt.Color(255, 255, 255));
         btn_atras.setFocusPainted(false);
 
         txt_direccion.setForeground(new java.awt.Color(0, 153, 51));

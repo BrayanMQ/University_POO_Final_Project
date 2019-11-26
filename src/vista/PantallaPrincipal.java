@@ -199,7 +199,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addComponent(btn_modificarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_eliminarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -236,11 +236,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         consultarEstudiantes.setText(" Consultar Estudiantes");
         consultarEstudiantes.setColorHover(new java.awt.Color(0, 102, 51));
         consultarEstudiantes.setFocusPainted(false);
+        consultarEstudiantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarEstudiantesActionPerformed(evt);
+            }
+        });
 
         btn_consultarLugares.setBackground(new java.awt.Color(0, 153, 51));
         btn_consultarLugares.setText("Consultar Lugares");
         btn_consultarLugares.setColorHover(new java.awt.Color(0, 102, 51));
         btn_consultarLugares.setFocusPainted(false);
+        btn_consultarLugares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarLugaresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -466,6 +476,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void btn_realizarMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_realizarMatriculaActionPerformed
         new MatricularEstudiante(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btn_realizarMatriculaActionPerformed
+
+    private void consultarEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarEstudiantesActionPerformed
+        new ConsultarEstudiantes(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_consultarEstudiantesActionPerformed
+
+    private void btn_consultarLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarLugaresActionPerformed
+        new ConsultarLugares(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_btn_consultarLugaresActionPerformed
 
     /**
      * @param args the command line arguments

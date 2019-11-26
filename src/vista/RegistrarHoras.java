@@ -5,6 +5,10 @@
  */
 package vista;
 
+import controlador.Controlador;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author isaac
@@ -29,44 +33,50 @@ public class RegistrarHoras extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btn_guardar = new rojeru_san.RSButtonRiple();
+        btn_aceptar = new rojeru_san.RSButtonRiple();
         btn_cancelar = new rojeru_san.RSButtonRiple();
         txt_cedula = new rojeru_san.RSMTextFull();
-        txt_horas = new rojeru_san.RSMTextFull();
-        jLabel1 = new javax.swing.JLabel();
+        txt_cantidadHoras = new rojeru_san.RSMTextFull();
+        lbl_registrarHoras = new javax.swing.JLabel();
+        lbl_error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setFocusable(false);
 
-        btn_guardar.setBackground(new java.awt.Color(0, 153, 0));
-        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_done_white_18dp.png"))); // NOI18N
-        btn_guardar.setColorHover(new java.awt.Color(0, 102, 0));
-        btn_guardar.setFocusPainted(false);
-        btn_guardar.setFocusable(false);
+        btn_aceptar.setBackground(new java.awt.Color(0, 153, 0));
+        btn_aceptar.setColorHover(new java.awt.Color(0, 102, 0));
+        btn_aceptar.setFocusPainted(false);
+        btn_aceptar.setFocusable(false);
+        btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aceptarActionPerformed(evt);
+            }
+        });
 
         btn_cancelar.setBackground(new java.awt.Color(204, 0, 0));
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_close_white_18dp.png"))); // NOI18N
         btn_cancelar.setColorHover(new java.awt.Color(153, 0, 0));
         btn_cancelar.setFocusPainted(false);
         btn_cancelar.setFocusable(false);
 
         txt_cedula.setForeground(new java.awt.Color(0, 153, 51));
+        txt_cedula.setText("Cédula del estudiante");
         txt_cedula.setBordeColorFocus(new java.awt.Color(0, 153, 51));
         txt_cedula.setBotonColor(new java.awt.Color(0, 153, 51));
         txt_cedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_cedula.setPlaceholder("Cédula Estudiante");
 
-        txt_horas.setForeground(new java.awt.Color(0, 153, 51));
-        txt_horas.setBordeColorFocus(new java.awt.Color(0, 153, 51));
-        txt_horas.setBotonColor(new java.awt.Color(0, 153, 51));
-        txt_horas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_horas.setPlaceholder("Horas");
+        txt_cantidadHoras.setForeground(new java.awt.Color(0, 153, 51));
+        txt_cantidadHoras.setText("Cantidad de horas");
+        txt_cantidadHoras.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_cantidadHoras.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_cantidadHoras.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_cantidadHoras.setPlaceholder("Horas");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel1.setText("Registrar Horas");
+        lbl_registrarHoras.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbl_registrarHoras.setForeground(new java.awt.Color(0, 153, 51));
+        lbl_registrarHoras.setText("Registrar Horas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,31 +85,36 @@ public class RegistrarHoras extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_horas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(txt_cantidadHoras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(lbl_registrarHoras)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(txt_cedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lbl_registrarHoras)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txt_horas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txt_cantidadHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 5, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -116,6 +131,34 @@ public class RegistrarHoras extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
+        boolean error = false;
+        String mensajeError = "";
+        lbl_error.setText("");
+        ArrayList<String> listaDatos = new ArrayList<>();
+        listaDatos.add(txt_cantidadHoras.getText());
+        listaDatos.add(txt_cedula.getText());
+        if (!Controlador.getSingletonInstance().getValidacion().validarDatoVacio(listaDatos)) {
+            mensajeError += "No se debe dejar espacios en blanco.\n";
+            lbl_error.setText(mensajeError);
+        }else{
+            if (!Controlador.getSingletonInstance().getValidacion().validarCedula(txt_cedula.getText())) {
+                mensajeError += "La cédula debe contener 10 dígitos.\n";
+                lbl_error.setText(mensajeError);
+                error = true;
+            }
+            if (!Controlador.getSingletonInstance().getValidacion().validarDigitosEnteros(txt_cantidadHoras.getText())) {
+                mensajeError += "La cantidad de horas no debe tener decimales.\n";
+                lbl_error.setText(mensajeError);
+                error = true;
+            }
+            if (!error) {
+                String mensaje = Controlador.getSingletonInstance().getGestorEstudiantes().registrarHorasEstudiante(txt_cedula.getText(), txt_cantidadHoras.getText());
+                JOptionPane.showMessageDialog(this, mensaje, "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +204,12 @@ public class RegistrarHoras extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojeru_san.RSButtonRiple btn_aceptar;
     private rojeru_san.RSButtonRiple btn_cancelar;
-    private rojeru_san.RSButtonRiple btn_guardar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbl_error;
+    private javax.swing.JLabel lbl_registrarHoras;
+    private rojeru_san.RSMTextFull txt_cantidadHoras;
     private rojeru_san.RSMTextFull txt_cedula;
-    private rojeru_san.RSMTextFull txt_horas;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,14 +7,17 @@ package vista;
 
 import controlador.Controlador;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import modelo.Estudiante;
+import modelo.IConstants;
 
 
 /**
  *
  * @author dark1
  */
-public class ConsultarEstudiantes extends javax.swing.JDialog {
+public class ConsultarEstudiantes extends javax.swing.JDialog implements IConstants{
+    
 
     /**
      * Creates new form ConsultarEstudiantesQueCompletaronHorasONo
@@ -156,16 +159,48 @@ public class ConsultarEstudiantes extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
-        //DefaultTableModel modelo = (DefaultTableModel) Jdialog1.jTable1.getModel();
+
+        String consulta = (String) cmbx_consultar.getSelectedItem();
+
+        int posicion = 0;
         ArrayList<Estudiante> listaEstudiantes = Controlador.getSingletonInstance().getListaEstudiantesRegistrados();
- 
-//        for (Estudiante estudiante : listaEstudiantes) {
-//            String lugar = Controlador.getSingletonInstance().estudiante.getLugarServicioSocial()
-//            
-//            Object filaNueva[] = {estudiante.getCedula(), estudiante.getNombre(), estudiante.getCorreo(),
-//                estudiante.getTelefono(), };
-//            modelo.addRow(filaNueva);
-//        }
+        ArrayList<Estudiante> listaEstudiantesImprimir = new ArrayList<>();
+        switch (consulta) {
+            case "Todos":
+                listaEstudiantesImprimir.addAll(listaEstudiantes);
+                break;
+
+            case "Horas Completadas":
+                for (Estudiante estudiante : listaEstudiantes) {
+                    if (estudiante.getCantidadHorasCompletadas() == HORAS_DE_SERVICIO) {
+                        listaEstudiantesImprimir.add(estudiante);
+                    }
+                }
+
+                break;
+            case "Con Horas en Proceso":
+                for (Estudiante estudiante : listaEstudiantes) {
+                    if (estudiante.getCantidadHorasCompletadas() < HORAS_DE_SERVICIO) {
+                        listaEstudiantesImprimir.add(estudiante);
+                    }
+                }
+                break;
+
+        }
+        String data[][] = new String[listaEstudiantesImprimir.size()][6];
+        for (Estudiante estudiante : listaEstudiantesImprimir) {
+            data[posicion][0] = String.valueOf(estudiante.getCedula());
+            data[posicion][1] = estudiante.getNombre();
+            data[posicion][2] = estudiante.getCorreo();
+            data[posicion][3] = String.valueOf(estudiante.getTelefono());
+            data[posicion][4] = Controlador.getSingletonInstance().getGestorEstudiantes().
+                    obtenerLugar(estudiante.getLugarServicioSocial());
+            data[posicion][5] = String.valueOf(estudiante.getCantidadHorasCompletadas());
+            posicion++;
+        }
+
+        String columnas[] = {"Cédula", "Nombre", "Correo", "Teléfono", "Lugar", "Horas"};
+        jTable_tabla.setModel(new DefaultTableModel(data, columnas));
     }//GEN-LAST:event_btn_consultarActionPerformed
 
     /**

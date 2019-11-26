@@ -8,4 +8,10 @@ public class Municipalidad extends Lugar{
         super(nombre, direccion, telefono, correo);
         this.requiereConocimiento = requiereConocimiento;
     }
+
+    public boolean isRequiereConocimiento() {
+        return requiereConocimiento;
+    }
+   
+   
 }

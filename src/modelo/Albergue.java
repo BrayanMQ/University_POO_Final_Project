@@ -9,4 +9,10 @@ public class Albergue extends Lugar{
         super(nombre, direccion, telefono, correo);
         this.requiereExperiencia = requiereExperiencia;
     }
+
+    public boolean isRequiereExperiencia() {
+        return requiereExperiencia;
+    }
+    
+    
 }

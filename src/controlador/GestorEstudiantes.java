@@ -1,10 +1,12 @@
 
 package controlador;
 
+import java.util.ArrayList;
 import modelo.Estudiante;
 import modelo.EstudianteFactory;
 import modelo.EstudianteUPrivada;
 import modelo.EstudianteUPublica;
+import modelo.Lugar;
 
 public class GestorEstudiantes {
     
@@ -98,5 +100,32 @@ public class GestorEstudiantes {
                 }
         }
         return false;
+    }
+    
+    public String registrarHorasEstudiante(String pCedula, String pCantidadHoras){
+        
+        Estudiante estudiante = buscarEstudiante(pCedula);
+        if (estudiante != null) {
+            
+            if (estudiante.getLugarServicioSocial() != 0) {
+                estudiante.registrarHoras(Integer.parseInt(pCantidadHoras));
+                return "La cantidad de horas restantes del estudiante son:" + estudiante.getCantidadHorasCompletadas();
+            }else{
+                return "El estudiante no tiene un lugar registrado.";
+            }
+        }else{
+            return "El estudiante no se encuentra registrado.";
+        }
+        
+    }
+    
+    public String obtenerLugar(int pIdLugar){
+        ArrayList<Lugar> listaLugares = Controlador.getSingletonInstance().getListaLugaresRegistrados();
+        for (Lugar lugar : listaLugares) {
+            if (lugar.getId() == pIdLugar) {
+                return lugar.getNombre();
+            }
+        }
+        return "No se encontró el lugar";
     }
 }
