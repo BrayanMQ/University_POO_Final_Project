@@ -43,6 +43,7 @@ public class ConsultarEstudianteID extends javax.swing.JDialog {
         txt_direccion = new rojeru_san.RSMTextFull();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));

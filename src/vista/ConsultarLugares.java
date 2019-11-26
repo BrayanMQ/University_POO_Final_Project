@@ -44,6 +44,7 @@ public class ConsultarLugares extends javax.swing.JDialog {
         jTable_tabla = new rojerusan.RSTableMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));

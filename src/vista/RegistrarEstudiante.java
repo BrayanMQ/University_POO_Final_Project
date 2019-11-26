@@ -55,6 +55,7 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
         rSButtonRiple1.setText("rSButtonRiple1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         PanelNegro.setBackground(new java.awt.Color(51, 51, 51));
@@ -127,7 +128,8 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
         btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
         btn_atras.setBorderPainted(false);
-        btn_atras.setColorHover(new java.awt.Color(255, 255, 255));
+        btn_atras.setColorHover(new java.awt.Color(0, 102, 0));
+        btn_atras.setColorTextHover(new java.awt.Color(0, 102, 0));
         btn_atras.setFocusPainted(false);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -41,12 +41,13 @@ public class MatricularEstudiante extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btn_guardar.setBackground(new java.awt.Color(0, 153, 0));
-        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_done_white_18dp.png"))); // NOI18N
+        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_done_white_18dp.png"))); // NOI18N
         btn_guardar.setBorderPainted(false);
         btn_guardar.setColorHover(new java.awt.Color(0, 102, 0));
         btn_guardar.setFocusPainted(false);
@@ -74,7 +75,7 @@ public class MatricularEstudiante extends javax.swing.JDialog {
         jLabel1.setText("Matricular Estudiante");
 
         btn_cancelar.setBackground(new java.awt.Color(204, 0, 0));
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_close_white_18dp.png"))); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_close_white_18dp.png"))); // NOI18N
         btn_cancelar.setBorderPainted(false);
         btn_cancelar.setColorHover(new java.awt.Color(153, 0, 0));
         btn_cancelar.setFocusPainted(false);
