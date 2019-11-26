@@ -9,12 +9,13 @@ package vista;
  *
  * @author isaac
  */
-public class RegistrarHoras extends javax.swing.JFrame {
+public class RegistrarHoras extends javax.swing.JDialog {
 
     /**
-     * Creates new form RegistrarHoras
+     * Creates new form RegistrarHora
      */
-    public RegistrarHoras() {
+    public RegistrarHoras(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -28,39 +29,40 @@ public class RegistrarHoras extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        rSButtonRiple1 = new rojeru_san.RSButtonRiple();
-        rSButtonRiple3 = new rojeru_san.RSButtonRiple();
-        rSMTextFull1 = new rojeru_san.RSMTextFull();
-        rSMTextFull2 = new rojeru_san.RSMTextFull();
+        btn_guardar = new rojeru_san.RSButtonRiple();
+        btn_cancelar = new rojeru_san.RSButtonRiple();
+        txt_cedula = new rojeru_san.RSMTextFull();
+        txt_horas = new rojeru_san.RSMTextFull();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setFocusable(false);
 
-        rSButtonRiple1.setBackground(new java.awt.Color(0, 153, 0));
-        rSButtonRiple1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_done_white_18dp.png"))); // NOI18N
-        rSButtonRiple1.setColorHover(new java.awt.Color(0, 102, 0));
-        rSButtonRiple1.setFocusPainted(false);
-        rSButtonRiple1.setFocusable(false);
+        btn_guardar.setBackground(new java.awt.Color(0, 153, 0));
+        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_done_white_18dp.png"))); // NOI18N
+        btn_guardar.setColorHover(new java.awt.Color(0, 102, 0));
+        btn_guardar.setFocusPainted(false);
+        btn_guardar.setFocusable(false);
 
-        rSButtonRiple3.setBackground(new java.awt.Color(204, 0, 0));
-        rSButtonRiple3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_close_white_18dp.png"))); // NOI18N
-        rSButtonRiple3.setColorHover(new java.awt.Color(153, 0, 0));
-        rSButtonRiple3.setFocusPainted(false);
-        rSButtonRiple3.setFocusable(false);
+        btn_cancelar.setBackground(new java.awt.Color(204, 0, 0));
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_close_white_18dp.png"))); // NOI18N
+        btn_cancelar.setColorHover(new java.awt.Color(153, 0, 0));
+        btn_cancelar.setFocusPainted(false);
+        btn_cancelar.setFocusable(false);
 
-        rSMTextFull1.setForeground(new java.awt.Color(0, 102, 51));
-        rSMTextFull1.setBordeColorFocus(new java.awt.Color(0, 102, 51));
-        rSMTextFull1.setBotonColor(new java.awt.Color(0, 102, 51));
-        rSMTextFull1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rSMTextFull1.setPlaceholder("Identificador Estudiante");
+        txt_cedula.setForeground(new java.awt.Color(0, 153, 51));
+        txt_cedula.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_cedula.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_cedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_cedula.setPlaceholder("Cédula Estudiante");
 
-        rSMTextFull2.setForeground(new java.awt.Color(0, 102, 51));
-        rSMTextFull2.setBordeColorFocus(new java.awt.Color(0, 102, 51));
-        rSMTextFull2.setBotonColor(new java.awt.Color(0, 102, 51));
-        rSMTextFull2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rSMTextFull2.setPlaceholder("Identificador Estudiante");
+        txt_horas.setForeground(new java.awt.Color(0, 153, 51));
+        txt_horas.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_horas.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_horas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_horas.setPlaceholder("Horas");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 51));
@@ -73,16 +75,16 @@ public class RegistrarHoras extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSMTextFull2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+                    .addComponent(txt_horas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_cedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(rSButtonRiple1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,14 +93,14 @@ public class RegistrarHoras extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSMTextFull1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSMTextFull2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonRiple3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonRiple1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(txt_horas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,21 +143,29 @@ public class RegistrarHoras extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(RegistrarHoras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistrarHoras().setVisible(true);
+                RegistrarHoras dialog = new RegistrarHoras(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojeru_san.RSButtonRiple btn_cancelar;
+    private rojeru_san.RSButtonRiple btn_guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private rojeru_san.RSButtonRiple rSButtonRiple1;
-    private rojeru_san.RSButtonRiple rSButtonRiple3;
-    private rojeru_san.RSMTextFull rSMTextFull1;
-    private rojeru_san.RSMTextFull rSMTextFull2;
+    private rojeru_san.RSMTextFull txt_cedula;
+    private rojeru_san.RSMTextFull txt_horas;
     // End of variables declaration//GEN-END:variables
 }

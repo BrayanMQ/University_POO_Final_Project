@@ -28,17 +28,102 @@ public class MatricularEstudiante extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btn_guardar = new rojeru_san.RSButtonRiple();
+        txt_cedula = new rojeru_san.RSMTextFull();
+        txt_idLugar = new rojeru_san.RSMTextFull();
+        jLabel1 = new javax.swing.JLabel();
+        btn_cancelar = new rojeru_san.RSButtonRiple();
+        btn_consultarLugares = new rojeru_san.RSButtonRiple();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btn_guardar.setBackground(new java.awt.Color(0, 153, 0));
+        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_done_white_18dp.png"))); // NOI18N
+        btn_guardar.setColorHover(new java.awt.Color(0, 102, 0));
+        btn_guardar.setFocusPainted(false);
+        btn_guardar.setFocusable(false);
+
+        txt_cedula.setForeground(new java.awt.Color(0, 153, 51));
+        txt_cedula.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_cedula.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_cedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_cedula.setPlaceholder("Cédula Estudiante");
+
+        txt_idLugar.setForeground(new java.awt.Color(0, 102, 51));
+        txt_idLugar.setBordeColorFocus(new java.awt.Color(0, 102, 51));
+        txt_idLugar.setBotonColor(new java.awt.Color(0, 102, 51));
+        txt_idLugar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_idLugar.setPlaceholder("Identificador Lugar");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel1.setText("Matricular Estudiante");
+
+        btn_cancelar.setBackground(new java.awt.Color(204, 0, 0));
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_close_white_18dp.png"))); // NOI18N
+        btn_cancelar.setColorHover(new java.awt.Color(153, 0, 0));
+        btn_cancelar.setFocusPainted(false);
+        btn_cancelar.setFocusable(false);
+
+        btn_consultarLugares.setBackground(new java.awt.Color(0, 153, 51));
+        btn_consultarLugares.setText("Consultar Lugares");
+        btn_consultarLugares.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_consultarLugares.setFocusPainted(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_idLugar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txt_cedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_idLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -87,5 +172,12 @@ public class MatricularEstudiante extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojeru_san.RSButtonRiple btn_cancelar;
+    private rojeru_san.RSButtonRiple btn_consultarLugares;
+    private rojeru_san.RSButtonRiple btn_guardar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private rojeru_san.RSMTextFull txt_cedula;
+    private rojeru_san.RSMTextFull txt_idLugar;
     // End of variables declaration//GEN-END:variables
 }
