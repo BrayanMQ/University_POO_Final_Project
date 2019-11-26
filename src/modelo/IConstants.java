@@ -9,5 +9,7 @@ public interface IConstants {
     public static String CONTRASENNA = "prograpoo";
     
     public static int ID_INICIAL_LUGARES = 1000;
-    public static int CUPOS_DISPONIBLES = 90;
+    public static int CUPOS_DISPONIBLES = 3;
+    
+    public static int HORAS_DE_SERVICIO = 90;
 }
