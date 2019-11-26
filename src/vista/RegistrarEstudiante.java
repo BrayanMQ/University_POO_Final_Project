@@ -5,8 +5,14 @@
  */
 package vista;
 import controlador.Controlador;
+import controlador.FileManager;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.Estudiante;
+import static modelo.IConstants.RUTA_LISTA_ESTUDIANTES;
 
 
 /**
@@ -267,7 +273,7 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
             lbl_error.setText(mensajeError);
         }else{
             if (!Controlador.getSingletonInstance().getValidacion().validarCedula(txt_cedula.getText())) {
-                mensajeError += "La cédula debe contener 10 dígitos.\n";
+                mensajeError += "La cédula debe contener 9 dígitos.\n";
                 lbl_error.setText(mensajeError);
                 error = true;
             }
@@ -296,15 +302,21 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
                 }
             }
             if (!error) {
-                if (!Controlador.getSingletonInstance().getGestorEstudiantes().registrarEstudiante(txt_carrera.getText(),
-                    txt_cedula.getText(), txt_correoEstudiante.getText(), txt_nombre.getText(), txt_telefono.getText(),
-                    txt_universidad_P_P.getText(), checkB_universidadPublica.isActivado(), txt_direccion.getText())) {
-                mensajeError += "El estudiante ya está registrado.\n";
-                lbl_error.setText(mensajeError);
-            }else{
-                JOptionPane.showMessageDialog(this, "Se registró correctamente al estudiante.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
-            }
+                try {
+                    if (!Controlador.getSingletonInstance().getGestorEstudiantes().registrarEstudiante(txt_carrera.getText(),
+                            txt_cedula.getText(), txt_correoEstudiante.getText(), txt_nombre.getText(), txt_telefono.getText(),
+                            txt_universidad_P_P.getText(), checkB_universidadPublica.isActivado(), txt_direccion.getText())) {
+                        mensajeError += "El estudiante ya está registrado.\n";
+                        lbl_error.setText(mensajeError);
+                    }else{
+                         FileManager fileManager = new FileManager();
+                         Estudiante estudianteNuevo = Controlador.getSingletonInstance().getGestorEstudiantes().buscarEstudiante(txt_cedula.getText());
+                         fileManager.escribirArchivo(RUTA_LISTA_ESTUDIANTES, estudianteNuevo);
+                        JOptionPane.showMessageDialog(this, "Se registró correctamente al estudiante.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                        this.dispose();
+                    }   } catch (IOException ex) {
+                    Logger.getLogger(RegistrarEstudiante.class.getName()).log(Level.SEVERE, null, ex);
+                }
         }
         
 

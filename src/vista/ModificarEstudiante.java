@@ -6,10 +6,15 @@
 package vista;
 
 import controlador.Controlador;
+import controlador.FileManager;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Estudiante;
 import modelo.EstudianteUPublica;
+import static modelo.IConstants.RUTA_LISTA_ESTUDIANTES;
 
 public class ModificarEstudiante extends javax.swing.JDialog {
 
@@ -17,6 +22,8 @@ public class ModificarEstudiante extends javax.swing.JDialog {
     
     public ModificarEstudiante(java.awt.Frame parent, boolean modal, Estudiante pEstudiante) {
         super(parent, modal);
+        initComponents();
+        setLocationRelativeTo(null);
         this.estudiante = pEstudiante;
         txt_cedula.setText(String.valueOf(pEstudiante.getCedula()));
         txt_nombre.setText(pEstudiante.getNombre());
@@ -32,8 +39,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
             checkB_universidadPublica.setEnabled(false);
         }
         
-        initComponents();
-        setLocationRelativeTo(null);
+        checkB_universidadPublica.setEnabled(false);
         txt_cedula.setEnabled(false);
     }
 
@@ -125,7 +131,6 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         txt_universidad_P_P.setPlaceholder("Correo Institucional");
 
         btn_Atras.setBackground(new java.awt.Color(0, 153, 51));
-        btn_Atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
         btn_Atras.setBorderPainted(false);
         btn_Atras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_Atras.setFocusPainted(false);
@@ -255,7 +260,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
             lbl_error.setText(mensajeError);
         }else{
             if (!Controlador.getSingletonInstance().getValidacion().validarCedula(txt_cedula.getText())) {
-                mensajeError += "La cédula debe contener 10 dígitos.\n";
+                mensajeError += "La cédula debe contener 9 dígitos.\n";
                 lbl_error.setText(mensajeError);
                 error = true;
             }
@@ -287,6 +292,13 @@ public class ModificarEstudiante extends javax.swing.JDialog {
                 if (Controlador.getSingletonInstance().getGestorEstudiantes().modificarEstudiante(txt_carrera.getText(),
                     txt_cedula.getText(), txt_correoEstudiante.getText(), txt_nombre.getText(), txt_telefono.getText(),
                     txt_universidad_P_P.getText(), checkB_universidadPublica.isActivado(), txt_direccion.getText())) {
+                    FileManager fileManager = new FileManager();
+                    try {
+                        fileManager.sobrescribirArchivo(RUTA_LISTA_ESTUDIANTES, Controlador.getSingletonInstance().getListaEstudiantesRegistrados());
+                        //fileManager.leerArchivo(RUTA_LISTA_ESTUDIANTES, true);
+                    } catch (IOException ex) {
+                        Logger.getLogger(ModificarEstudiante.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     JOptionPane.showMessageDialog(this, "Se modificó correctamente al estudiante.", "Modificación exitosa", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
             }else{

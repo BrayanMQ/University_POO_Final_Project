@@ -108,7 +108,7 @@ public class Validacion {
      * @return Retornará true si la cedula es válida, caso contrario retornará false
      */
     public boolean validarCedula(String pCedula){
-        return pCedula.matches("[0-9]{10}");
+        return pCedula.matches("[0-9]{9}");
     }
     
 }

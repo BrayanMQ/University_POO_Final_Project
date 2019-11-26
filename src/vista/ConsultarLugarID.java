@@ -5,6 +5,8 @@
  */
 package vista;
 
+import modelo.Lugar;
+
 /**
  *
  * @author isaac
@@ -14,10 +16,19 @@ public class ConsultarLugarID extends javax.swing.JDialog {
     /**
      * Creates new form ConsultarLugarID
      */
-    public ConsultarLugarID(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    private static Lugar lugar;
+    
+    public ConsultarLugarID(java.awt.Frame parent, boolean modal, Lugar pLugar) {
+        super(parent, modal);        
         initComponents();
         setLocationRelativeTo(null);
+        this.lugar = pLugar;
+        txt_id.setText(String.valueOf(lugar.getId()));
+        txt_nombre.setText(pLugar.getNombre());
+        txt_correo.setText(pLugar.getCorreo());
+        txt_direccion.setText(pLugar.getCorreo());
+        txt_telefono.setText(String.valueOf(pLugar.getTelefono()));
+        txt_id.setEnabled(false);
     }
 
     /**
@@ -78,7 +89,7 @@ public class ConsultarLugarID extends javax.swing.JDialog {
         txt_correo.setPlaceholder("Correo");
 
         rSButtonRiple4.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
+        rSButtonRiple4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
         rSButtonRiple4.setBorderPainted(false);
         rSButtonRiple4.setColorHover(new java.awt.Color(0, 102, 51));
         rSButtonRiple4.setFocusPainted(false);
@@ -194,7 +205,7 @@ public class ConsultarLugarID extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ConsultarLugarID dialog = new ConsultarLugarID(new javax.swing.JFrame(), true);
+                ConsultarLugarID dialog = new ConsultarLugarID(new javax.swing.JFrame(), true, lugar);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -42,11 +42,12 @@ public class GestorLugares {
     }
     
     public Lugar buscarLugar(String pId) {
-    
         for (Lugar lugar : Controlador.getSingletonInstance().getListaLugaresRegistrados()) {
+            
             if (lugar.getId() == Integer.parseInt(pId)) {
                 return lugar;
             }
+            
         }
         return null;
     }

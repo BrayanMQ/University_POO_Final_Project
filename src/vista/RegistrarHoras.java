@@ -6,8 +6,16 @@
 package vista;
 
 import controlador.Controlador;
+import controlador.FileManager;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.Estudiante;
+import static modelo.IConstants.RUTA_LISTA_ESTUDIANTES;
+import static modelo.IConstants.RUTA_LISTA_LUGARES;
+import modelo.Lugar;
 
 /**
  *
@@ -165,7 +173,38 @@ public class RegistrarHoras extends javax.swing.JDialog {
             }
             if (!error) {
                 String mensaje = Controlador.getSingletonInstance().getGestorEstudiantes().registrarHorasEstudiante(txt_cedula.getText(), txt_cantidadHoras.getText());
+                
+                if (mensaje != "El estudiante no tiene un lugar registrado.") { 
+                
+                Estudiante estudiante = Controlador.getSingletonInstance().getGestorEstudiantes().buscarEstudiante(txt_cedula.getText());
+                
+                if (estudiante.getCantidadFaltantes() <= 0) {
+                    
+                    Lugar lugar = Controlador.getSingletonInstance().getGestorLugares().buscarLugar(String.valueOf(estudiante.getLugarServicioSocial()));
+                    
+                    for (int i = 0; i < lugar.getListaEstudiantes().size(); i++) {
+                        if ((int)lugar.getListaEstudiantes().get(i) == Integer.parseInt(txt_cedula.getText())) {
+                            lugar.getListaEstudiantes().remove(i);
+                            JOptionPane.showMessageDialog(this,  "Se ha desmatriculado exitosamente", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    }
+                }
+                
+                FileManager fileManager = new FileManager();
+                try {
+                    fileManager.sobrescribirArchivo(RUTA_LISTA_ESTUDIANTES, Controlador.getSingletonInstance().getListaEstudiantesRegistrados());
+                    fileManager.sobreescribirArchivo(RUTA_LISTA_LUGARES, Controlador.getSingletonInstance().getListaLugaresRegistrados());
+
+                   // fileManager.leerArchivo(RUTA_LISTA_ESTUDIANTES, true);
+                    //fileManager.leerArchivo(RUTA_LISTA_LUGARES, false);
+                } catch (IOException ex) {
+                    Logger.getLogger(PantallaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                }
                 JOptionPane.showMessageDialog(this, mensaje, "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                
+                
             }
         }
     }//GEN-LAST:event_btn_aceptarActionPerformed

@@ -6,8 +6,13 @@
 package vista;
 
 import controlador.Controlador;
+import controlador.FileManager;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Estudiante;
+import static modelo.IConstants.*;
 import modelo.Lugar;
 
 /**
@@ -475,6 +480,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                      }  
                  }            
                  Controlador.getSingletonInstance().getGestorEstudiantes().eliminarEstudiante(id);
+                 FileManager fileManager = new FileManager();
+                 
+//                 try {
+//                     //fileManager.sobrescribirArchivo(RUTA_LISTA_ESTUDIANTES, Controlador.getSingletonInstance().getListaEstudiantesRegistrados());
+//                     //fileManager.sobreescribirArchivo(RUTA_LISTA_LUGARES, Controlador.getSingletonInstance().getListaLugaresRegistrados());
+//                     
+//                     //fileManager.leerArchivo(RUTA_LISTA_ESTUDIANTES, true);
+//                     //fileManager.leerArchivo(RUTA_LISTA_LUGARES, false);
+//                 } catch (IOException ex) {
+//                     Logger.getLogger(PantallaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+//                 }
+                 
                  JOptionPane.showMessageDialog(this, "Se eliminó el estudiante con cédula " + id + ".", "Eliminar estudiante", JOptionPane.INFORMATION_MESSAGE);
                  
              } else {
@@ -503,6 +520,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                  }
                  
                  Controlador.getSingletonInstance().getGestorLugares().eliminarLugar(id);
+//                 FileManager fileManager = new FileManager();
+//                 try {
+//                     fileManager.sobrescribirArchivo(RUTA_LISTA_ESTUDIANTES, Controlador.getSingletonInstance().getListaEstudiantesRegistrados());
+//                     fileManager.sobreescribirArchivo(RUTA_LISTA_LUGARES, Controlador.getSingletonInstance().getListaLugaresRegistrados());
+//                     
+//                     fileManager.leerArchivo(RUTA_LISTA_ESTUDIANTES, true);
+//                     fileManager.leerArchivo(RUTA_LISTA_LUGARES, false);
+//                 } catch (IOException ex) {
+//                     Logger.getLogger(PantallaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+//                 }
+                 
+                 JOptionPane.showMessageDialog(this, "Se ha eliminado con éxito el lugar con identificador " + id + ".", "Eliminar lugar", JOptionPane.INFORMATION_MESSAGE);
                  
              } else {
              
@@ -529,11 +558,39 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_consultarLugaresActionPerformed
 
     private void btn_consultaEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultaEstudianteActionPerformed
-        new ConsultarEstudianteID(this, rootPaneCheckingEnabled).setVisible(true);
+                String id = JOptionPane.showInputDialog(this, "Indique la cédula del estudiante que desea modificar.", "Modificar estudiante", JOptionPane.QUESTION_MESSAGE);
+        
+        if (id != null ) {//Si no le da al botón cancelar
+             Estudiante estudiante = Controlador.getSingletonInstance().getGestorEstudiantes().buscarEstudiante(id);
+             
+             if (estudiante != null) {
+                
+                 new ConsultarEstudianteID(this, rootPaneCheckingEnabled, estudiante).setVisible(true);
+                 
+             } else {
+             
+                 JOptionPane.showMessageDialog(this, "No se ha encontrado el estudiante con cédula " + id + ".", "Modificar estudiante", JOptionPane.INFORMATION_MESSAGE);
+                 
+             }
+        }    
     }//GEN-LAST:event_btn_consultaEstudianteActionPerformed
 
     private void btn_consultaLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultaLugarActionPerformed
-    new ConsultarLugarID(this, rootPaneCheckingEnabled).setVisible(true);
+            String id = JOptionPane.showInputDialog(this, "Indique el identificador del lugar que desea modificar.", "Modificar lugar", JOptionPane.QUESTION_MESSAGE);
+        
+        if (id != null ) {//Si no le da al botón cancelar
+             Lugar lugar = Controlador.getSingletonInstance().getGestorLugares().buscarLugar(id);
+             
+             if (lugar != null) {
+                
+                 new ConsultarLugarID(this, rootPaneCheckingEnabled, lugar).setVisible(true);
+                 
+             } else {
+             
+                 JOptionPane.showMessageDialog(this, "No se ha encontrado el lugar con identificador " + id + ".", "Modificar lugar", JOptionPane.INFORMATION_MESSAGE);
+                 
+             }
+        } 
     }//GEN-LAST:event_btn_consultaLugarActionPerformed
 
     /**

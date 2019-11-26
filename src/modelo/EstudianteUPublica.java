@@ -5,9 +5,9 @@ public class EstudianteUPublica extends Estudiante{
     private String correoInstitucional;
     
     public EstudianteUPublica(String correoInstitucional, String pNombre, int pCedula, 
-            String pCorreo, int pTelefono, String pCarrera) {
+            String pCorreo, int pTelefono, String pCarrera, String pDireccion) {
         
-        super(pNombre, pCedula, pCorreo, pTelefono, pCarrera);
+        super(pNombre, pCedula, pCorreo, pTelefono, pCarrera, pDireccion);
         this.correoInstitucional = correoInstitucional;
         
     }

@@ -6,8 +6,13 @@
 package vista;
 
 import controlador.Controlador;
+import controlador.FileManager;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static modelo.IConstants.*;
 import modelo.Lugar;
 
 /**
@@ -23,14 +28,15 @@ public class ModificarLugar extends javax.swing.JDialog {
     private static Lugar lugar;
     
     public ModificarLugar(java.awt.Frame parent, boolean modal, Lugar pLugar) {
-        super(parent, modal);
-        txt_id.setText(String.valueOf(pLugar.getId()));
+        super(parent, modal);        
+        initComponents();
+        setLocationRelativeTo(null);
+        this.lugar = pLugar;
+        txt_id.setText(String.valueOf(lugar.getId()));
         txt_nombre.setText(pLugar.getNombre());
         txt_correo.setText(pLugar.getCorreo());
         txt_direccion.setText(pLugar.getCorreo());
         txt_telefono.setText(String.valueOf(pLugar.getTelefono()));
-        initComponents();
-        setLocationRelativeTo(null);
         txt_id.setEnabled(false);
     }
 
@@ -86,6 +92,11 @@ public class ModificarLugar extends javax.swing.JDialog {
         txt_id.setBordeColorFocus(new java.awt.Color(0, 153, 51));
         txt_id.setBotonColor(new java.awt.Color(0, 153, 51));
         txt_id.setPlaceholder("Identificador");
+        txt_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_idActionPerformed(evt);
+            }
+        });
 
         txt_direccion.setForeground(new java.awt.Color(0, 153, 51));
         txt_direccion.setBordeColorFocus(new java.awt.Color(0, 153, 51));
@@ -103,7 +114,6 @@ public class ModificarLugar extends javax.swing.JDialog {
         txt_correo.setPlaceholder("Correo");
 
         rSButtonRiple4.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
         rSButtonRiple4.setBorderPainted(false);
         rSButtonRiple4.setColorHover(new java.awt.Color(0, 102, 51));
         rSButtonRiple4.setFocusPainted(false);
@@ -222,6 +232,13 @@ public class ModificarLugar extends javax.swing.JDialog {
             if (!error) {
                 if (Controlador.getSingletonInstance().getGestorLugares().modificarLugar(txt_correo.getText(), 
                         txt_nombre.getText(), txt_direccion.getText(), txt_telefono.getText(), lugar.getId())) {
+                    FileManager fileManager = new FileManager();
+                    try {
+                        fileManager.sobreescribirArchivo(RUTA_LISTA_LUGARES, Controlador.getSingletonInstance().getListaLugaresRegistrados());
+                        //fileManager.leerArchivo(RUTA_LISTA_LUGARES, false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(ModificarEstudiante.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     JOptionPane.showMessageDialog(this, "Se modificó correctamente el lugar.", "Modificación exitosa", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                 }else{
@@ -237,6 +254,10 @@ public class ModificarLugar extends javax.swing.JDialog {
     private void rSButtonRiple4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple4ActionPerformed
     this.dispose();    // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonRiple4ActionPerformed
+
+    private void txt_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_idActionPerformed
 
     /**
      * @param args the command line arguments

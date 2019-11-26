@@ -1,18 +1,22 @@
 
 package controlador;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import modelo.Estudiante;
 import modelo.EstudianteFactory;
 import modelo.EstudianteUPrivada;
 import modelo.EstudianteUPublica;
+import modelo.IConstants;
 import modelo.Lugar;
 
-public class GestorEstudiantes {
+public class GestorEstudiantes implements IConstants{
+    
+    private FileManager fileManager = new FileManager();
     
     public boolean registrarEstudiante(String pCarrera, String pCedula, 
             String pCorreoEstudiante, String pNombre, 
-            String pTelefono, String pUniversidadDato, boolean pUniversidadPublica, String pDireccion){
+            String pTelefono, String pUniversidadDato, boolean pUniversidadPublica, String pDireccion) throws IOException{
         
         //Creador de estudiantes 
         EstudianteFactory crearEstudiante = new EstudianteFactory();
@@ -109,7 +113,14 @@ public class GestorEstudiantes {
             
             if (estudiante.getLugarServicioSocial() != 0) {
                 estudiante.registrarHoras(Integer.parseInt(pCantidadHoras));
-                return "La cantidad de horas restantes del estudiante son:" + estudiante.getCantidadHorasCompletadas();
+                
+                if (estudiante.getCantidadHorasCompletadas() >= 90) {
+                    return "El estudiante ya cumplió con las horas.";
+                } else {
+                    return "La cantidad de horas restantes del estudiante son:" + (HORAS_DE_SERVICIO-estudiante.getCantidadHorasCompletadas());
+                }
+               
+                
             }else{
                 return "El estudiante no tiene un lugar registrado.";
             }

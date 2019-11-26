@@ -6,8 +6,15 @@
 package vista;
 
 import controlador.Controlador;
+import controlador.FileManager;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.Estudiante;
+import static modelo.IConstants.*;
+import modelo.Lugar;
 
 /**
  *
@@ -244,6 +251,13 @@ public class RegistrarLugar extends javax.swing.JDialog {
                     mensajeError += "El lugar ya está registrado.\n";
                     lbl_error.setText(mensajeError);
                 }else{
+                    FileManager fileManager = new FileManager();
+                    Lugar lugarNuevo = Controlador.getSingletonInstance().getListaLugaresRegistrados().get(Controlador.getSingletonInstance().getListaLugaresRegistrados().size()-1);
+                    try {
+                        fileManager.escribirArchivo(RUTA_LISTA_LUGARES, lugarNuevo);
+                    } catch (IOException ex) {
+                        Logger.getLogger(RegistrarLugar.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     JOptionPane.showMessageDialog(this, "Se registró correctamente el lugar.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                 }

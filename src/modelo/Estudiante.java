@@ -11,11 +11,12 @@ public abstract class Estudiante implements IConstants{
     protected int cantidadHorasCompletadas;
     protected int lugarServicioSocial;
     
-    public Estudiante(String pNombre, int pCedula, String pCorreo, int pTelefono, String pCarrera) {
+    public Estudiante(String pNombre, int pCedula, String pCorreo, int pTelefono, String pCarrera, String pDireccion) {
         this.nombre = pNombre;
         this.cedula = pCedula;
         this.correo = pCorreo;
         this.telefono = pTelefono;
+        this.direccion = pDireccion;
         this.carrera = pCarrera;
         this.lugarServicioSocial = 0;
         this.cantidadHorasCompletadas = 0;

@@ -6,6 +6,9 @@
 
 package vista;
 
+import modelo.Estudiante;
+import modelo.EstudianteUPublica;
+
 /**
  *
  * @author isaac
@@ -13,10 +16,28 @@ package vista;
 public class ConsultarEstudianteID extends javax.swing.JDialog {
 
     /** Creates new form ConsultarEstudianteID */
-    public ConsultarEstudianteID(java.awt.Frame parent, boolean modal) {
+    public static Estudiante estudiante;
+    public ConsultarEstudianteID(java.awt.Frame parent, boolean modal, Estudiante pEstudiante) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        this.estudiante = pEstudiante;
+        txt_cedula.setText(String.valueOf(pEstudiante.getCedula()));
+        txt_nombre.setText(pEstudiante.getNombre());
+        txt_correoEstudiante.setText(pEstudiante.getCorreo());
+        txt_carrera.setText(pEstudiante.getCarrera());
+        txt_telefono.setText(String.valueOf(pEstudiante.getTelefono()));
+        txt_direccion.setText(pEstudiante.getDireccion());
+        
+        if (pEstudiante instanceof EstudianteUPublica) {
+            checkB_universidadPublica.setEnabled(true);
+            txt_universidad_P_P.setText(((EstudianteUPublica)pEstudiante).getCorreoInstitucional());
+        } else {
+            checkB_universidadPublica.setEnabled(false);
+        }
+        
+        checkB_universidadPublica.setEnabled(false);
+        txt_cedula.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
@@ -238,7 +259,7 @@ public class ConsultarEstudianteID extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ConsultarEstudianteID dialog = new ConsultarEstudianteID(new javax.swing.JFrame(), true);
+                ConsultarEstudianteID dialog = new ConsultarEstudianteID(new javax.swing.JFrame(), true, estudiante);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

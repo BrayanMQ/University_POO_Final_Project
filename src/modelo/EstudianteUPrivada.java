@@ -5,8 +5,8 @@ public class EstudianteUPrivada extends Estudiante{
     private int dineroRequerido;
     
     public EstudianteUPrivada(int dineroRequerido, String pNombre, int pCedula, 
-            String pCorreo, int pTelefono, String pCarrera) {
-        super(pNombre, pCedula, pCorreo, pTelefono, pCarrera);
+            String pCorreo, int pTelefono, String pCarrera, String pDireccion) {
+        super(pNombre, pCedula, pCorreo, pTelefono, pCarrera, pDireccion);
         this.dineroRequerido = dineroRequerido;
     }
 

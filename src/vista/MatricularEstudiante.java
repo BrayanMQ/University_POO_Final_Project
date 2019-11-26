@@ -5,10 +5,16 @@
  */
 package vista;
 import controlador.Controlador;
+import controlador.FileManager;
 import java.awt.Frame;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Email;
 import modelo.Estudiante;
+import static modelo.IConstants.RUTA_LISTA_ESTUDIANTES;
+import static modelo.IConstants.RUTA_LISTA_LUGARES;
 import modelo.Lugar;
 
 public class MatricularEstudiante extends javax.swing.JDialog {
@@ -164,7 +170,7 @@ public class MatricularEstudiante extends javax.swing.JDialog {
             
             if (lugar != null) {
                 
-                if (estudiante.getLugarServicioSocial() != 0) {
+                if (estudiante.getLugarServicioSocial() == 0) {
                     
                     if (lugar.getCuposRestantes() != 0) {
                         
@@ -172,6 +178,18 @@ public class MatricularEstudiante extends javax.swing.JDialog {
                         lugar.getListaEstudiantes().add(estudiante.getCedula());
                         Email email = new Email();
                         if ( email.enviarMail(lugar.getCorreo(), estudiante.getNombre(), estudiante.getCedula())) {
+                            
+                            FileManager fileManager = new FileManager();
+                            try {
+                                fileManager.sobrescribirArchivo(RUTA_LISTA_ESTUDIANTES, Controlador.getSingletonInstance().getListaEstudiantesRegistrados());
+                                fileManager.sobreescribirArchivo(RUTA_LISTA_LUGARES, Controlador.getSingletonInstance().getListaLugaresRegistrados());
+
+                                //fileManager.leerArchivo(RUTA_LISTA_ESTUDIANTES, true);
+                               // fileManager.leerArchivo(RUTA_LISTA_LUGARES, false);
+                            } catch (IOException ex) {
+                                Logger.getLogger(PantallaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                            
                             JOptionPane.showMessageDialog(this, "Se ha matriculado con éxito el estudiante con cédula " + cedula + " en " + lugar.getNombre() + ".", "Matricular estudiante", JOptionPane.INFORMATION_MESSAGE);
                             this.dispose();
                         }
