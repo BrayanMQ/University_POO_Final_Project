@@ -16,6 +16,7 @@ public class ConsultarEstudianteID extends javax.swing.JDialog {
     public ConsultarEstudianteID(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
@@ -42,6 +43,7 @@ public class ConsultarEstudianteID extends javax.swing.JDialog {
         txt_direccion = new rojeru_san.RSMTextFull();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 

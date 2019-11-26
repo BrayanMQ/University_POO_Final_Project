@@ -21,6 +21,7 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
     public RegistrarEstudiante(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
         checkB_universidadPublica.setActivado(true);
         
     }
@@ -54,6 +55,7 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
         rSButtonRiple1.setText("rSButtonRiple1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         PanelNegro.setBackground(new java.awt.Color(51, 51, 51));
 

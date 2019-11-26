@@ -19,6 +19,7 @@ public class MatricularEstudiante extends javax.swing.JDialog {
     public MatricularEstudiante(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -38,7 +39,9 @@ public class MatricularEstudiante extends javax.swing.JDialog {
         btn_cancelar = new rojeru_san.RSButtonRiple();
         btn_consultarLugares = new rojeru_san.RSButtonRiple();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

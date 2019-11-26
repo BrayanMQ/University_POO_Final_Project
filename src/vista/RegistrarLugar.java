@@ -21,6 +21,7 @@ public class RegistrarLugar extends javax.swing.JDialog {
     public RegistrarLugar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -48,6 +49,7 @@ public class RegistrarLugar extends javax.swing.JDialog {
         lbl_error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 

@@ -33,6 +33,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         }
         
         initComponents();
+        setLocationRelativeTo(null);
         txt_cedula.setEnabled(false);
     }
 
@@ -62,6 +63,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         lbl_error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 

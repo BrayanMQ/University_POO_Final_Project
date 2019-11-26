@@ -25,6 +25,7 @@ public class ConsultarEstudiantes extends javax.swing.JDialog implements IConsta
     public ConsultarEstudiantes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -46,6 +47,7 @@ public class ConsultarEstudiantes extends javax.swing.JDialog implements IConsta
         jTable_tabla = new rojerusan.RSTableMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
