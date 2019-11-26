@@ -460,7 +460,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_EliminarLugarActionPerformed
 
     private void btn_registrarHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarHorasActionPerformed
-        // TODO add your handling code here:
+        new RegistrarHoras(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btn_registrarHorasActionPerformed
 
     private void btn_realizarMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_realizarMatriculaActionPerformed

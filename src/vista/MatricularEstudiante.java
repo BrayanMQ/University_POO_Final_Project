@@ -6,6 +6,7 @@
 package vista;
 import controlador.Controlador;
 import javax.swing.JOptionPane;
+import modelo.Email;
 import modelo.Estudiante;
 import modelo.Lugar;
 
@@ -151,8 +152,12 @@ public class MatricularEstudiante extends javax.swing.JDialog {
                         
                         estudiante.setLugarServicioSocial(lugar.getId());
                         lugar.getListaEstudiantes().add(estudiante.getCedula());
-                         JOptionPane.showMessageDialog(this, "Se ha matriculado con éxito el estudiante con cédula " + cedula + " en " + lugar.getNombre() + ".", "Matricular estudiante", JOptionPane.INFORMATION_MESSAGE);
-                         this.dispose();
+                        Email email = new Email();
+                        if ( email.enviarMail(lugar.getCorreo(), estudiante.getNombre(), estudiante.getCedula())) {
+                            JOptionPane.showMessageDialog(this, "Se ha matriculado con éxito el estudiante con cédula " + cedula + " en " + lugar.getNombre() + ".", "Matricular estudiante", JOptionPane.INFORMATION_MESSAGE);
+                            this.dispose();
+                        }
+                         
                         
                     } else {
                         JOptionPane.showMessageDialog(this, "El lugar con identificador " + idLugar + " no cuenta con cupos disponibles.", "Matricular estudiante", JOptionPane.ERROR_MESSAGE);

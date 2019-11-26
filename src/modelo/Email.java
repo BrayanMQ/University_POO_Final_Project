@@ -52,8 +52,10 @@ public class Email implements IConstants{
             return true;
             
         } catch (AddressException ex) {
+            JOptionPane.showMessageDialog(null, "No se pu", "Correo", JOptionPane.INFORMATION_MESSAGE);
             Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (MessagingException ex) {
+            JOptionPane.showMessageDialog(null, "Mail Enviado", "Correo", JOptionPane.INFORMATION_MESSAGE);
             Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
