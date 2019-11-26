@@ -10,14 +10,13 @@ public class GestorEstudiantes {
     
     public boolean registrarEstudiante(String pCarrera, String pCedula, 
             String pCorreoEstudiante, String pNombre, 
-            String pTelefono, String pUniversidadDato, boolean pUniversidadPublica){
+            String pTelefono, String pUniversidadDato, boolean pUniversidadPublica, String pDireccion){
         
         //Creador de estudiantes 
         EstudianteFactory crearEstudiante = new EstudianteFactory();
-        
         //Estudiante posible a insertar
         Estudiante estudiante = (Estudiante) crearEstudiante.crear(pCarrera, pCedula, 
-                pCorreoEstudiante, pUniversidadPublica, pNombre, pTelefono, pUniversidadDato);
+                pCorreoEstudiante, pUniversidadPublica, pNombre, pTelefono, pUniversidadDato, pDireccion);
         
         //Si el estudiante no está en lista, lo agrega
         if (buscarEstudiante(pCedula) == null) {
@@ -56,7 +55,7 @@ public class GestorEstudiantes {
         //Estudiante posible a insertar
         Estudiante estudiante = (Estudiante)crearEstudiante.crear(pCarrera, pCedula, 
                 pCorreoEstudiante, pUniversidadPublica, pNombre, 
-                pTelefono, pUniversidadDato);
+                pTelefono, pUniversidadDato, pDireccion);
         
         //Si el estudiante no está en lista, lo agrega
         if (!Controlador.getSingletonInstance().getListaEstudiantesRegistrados().contains(estudiante)) {

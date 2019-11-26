@@ -13,7 +13,7 @@ public class LugarFactory implements Factory{
     
     @Override
     public Object crear(String pCorreo, String pDireccion, String pNombre, 
-            boolean pRequerimiento, String pTelefono, String pTipoLugar, String vacio2) {
+            boolean pRequerimiento, String pTelefono, String pTipoLugar, String vacio1, String vacio2) {
         
         switch(pTipoLugar) {
             case "Municipalidad":

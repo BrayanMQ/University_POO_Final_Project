@@ -13,6 +13,6 @@ public interface Factory <T> {
     
     public T crear(String pDato1, String pDato2, 
             String pDato3, boolean pDato4, String pDato5, 
-            String pDato6, String pDato7);
+            String pDato6, String pDato7, String pDato8);
     
 }

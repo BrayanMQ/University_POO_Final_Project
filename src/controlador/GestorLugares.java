@@ -14,7 +14,7 @@ public class GestorLugares {
         LugarFactory crearLugar = new LugarFactory();
         
         //Lugar posible a insertar
-        Lugar lugar = (Lugar) crearLugar.crear(pCorreo, pDireccion, pNombre, pRequerimiento, pTelefono, pTipoLugar, "");
+        Lugar lugar = (Lugar) crearLugar.crear(pCorreo, pDireccion, pNombre, pRequerimiento, pTelefono, pTipoLugar, "", "");
         
         //Si el lugar no está en lista, lo agrega
         if (!Controlador.getSingletonInstance().getListaLugaresRegistrados().contains(lugar)) {
