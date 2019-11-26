@@ -53,6 +53,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         consultarEstudiantes = new rojeru_san.RSButtonRiple();
         btn_consultarLugares = new rojeru_san.RSButtonRiple();
+        btn_consultaEstudiante = new rojeru_san.RSButtonRiple();
         jPanel7 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -97,6 +98,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_registrarLugar.setBackground(new java.awt.Color(0, 153, 51));
         btn_registrarLugar.setText("Registrar");
+        btn_registrarLugar.setBorderPainted(false);
         btn_registrarLugar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrarLugar.setFocusPainted(false);
         btn_registrarLugar.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +109,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_modificarLugar.setBackground(new java.awt.Color(0, 153, 51));
         btn_modificarLugar.setText("Modificar");
+        btn_modificarLugar.setBorderPainted(false);
         btn_modificarLugar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_modificarLugar.setFocusPainted(false);
         btn_modificarLugar.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +120,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_EliminarLugar.setBackground(new java.awt.Color(0, 153, 51));
         btn_EliminarLugar.setText("Eliminar");
+        btn_EliminarLugar.setBorderPainted(false);
         btn_EliminarLugar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_EliminarLugar.setFocusPainted(false);
         btn_EliminarLugar.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +135,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_registrarEstudiante.setBackground(new java.awt.Color(0, 153, 51));
         btn_registrarEstudiante.setText("Registrar");
+        btn_registrarEstudiante.setBorderPainted(false);
         btn_registrarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrarEstudiante.setFocusPainted(false);
         btn_registrarEstudiante.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +146,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_modificarEstudiante.setBackground(new java.awt.Color(0, 153, 51));
         btn_modificarEstudiante.setText("Modificar");
+        btn_modificarEstudiante.setBorderPainted(false);
         btn_modificarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
         btn_modificarEstudiante.setFocusPainted(false);
         btn_modificarEstudiante.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +157,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_eliminarEstudiante.setBackground(new java.awt.Color(0, 153, 51));
         btn_eliminarEstudiante.setText("Eliminar");
+        btn_eliminarEstudiante.setBorderPainted(false);
         btn_eliminarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
         btn_eliminarEstudiante.setFocusPainted(false);
         btn_eliminarEstudiante.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +217,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_registrarHoras.setBackground(new java.awt.Color(0, 153, 51));
         btn_registrarHoras.setText("Registrar Horas");
+        btn_registrarHoras.setBorderPainted(false);
         btn_registrarHoras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrarHoras.setFocusPainted(false);
         btn_registrarHoras.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +228,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_realizarMatricula.setBackground(new java.awt.Color(0, 153, 51));
         btn_realizarMatricula.setText("Realizar Matricula");
+        btn_realizarMatricula.setBorderPainted(false);
         btn_realizarMatricula.setColorHover(new java.awt.Color(0, 102, 51));
         btn_realizarMatricula.setFocusPainted(false);
         btn_realizarMatricula.addActionListener(new java.awt.event.ActionListener() {
@@ -234,6 +243,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         consultarEstudiantes.setBackground(new java.awt.Color(0, 153, 51));
         consultarEstudiantes.setText(" Consultar Estudiantes");
+        consultarEstudiantes.setBorderPainted(false);
         consultarEstudiantes.setColorHover(new java.awt.Color(0, 102, 51));
         consultarEstudiantes.setFocusPainted(false);
         consultarEstudiantes.addActionListener(new java.awt.event.ActionListener() {
@@ -244,11 +254,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btn_consultarLugares.setBackground(new java.awt.Color(0, 153, 51));
         btn_consultarLugares.setText("Consultar Lugares");
+        btn_consultarLugares.setBorderPainted(false);
         btn_consultarLugares.setColorHover(new java.awt.Color(0, 102, 51));
         btn_consultarLugares.setFocusPainted(false);
         btn_consultarLugares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultarLugaresActionPerformed(evt);
+            }
+        });
+
+        btn_consultaEstudiante.setBackground(new java.awt.Color(0, 153, 51));
+        btn_consultaEstudiante.setText("Estudiante por ID");
+        btn_consultaEstudiante.setBorderPainted(false);
+        btn_consultaEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_consultaEstudiante.setFocusPainted(false);
+        btn_consultaEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultaEstudianteActionPerformed(evt);
             }
         });
 
@@ -265,7 +287,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addComponent(btn_registrarHoras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5)
                     .addComponent(consultarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultaEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -283,6 +306,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addComponent(consultarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_consultaEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -333,7 +358,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(14, 14, 14))
@@ -485,6 +510,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         new ConsultarLugares(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btn_consultarLugaresActionPerformed
 
+    private void btn_consultaEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultaEstudianteActionPerformed
+        new ConsultarEstudianteID(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_btn_consultaEstudianteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -522,6 +551,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButtonRiple btn_EliminarLugar;
+    private rojeru_san.RSButtonRiple btn_consultaEstudiante;
     private rojeru_san.RSButtonRiple btn_consultarLugares;
     private rojeru_san.RSButtonRiple btn_eliminarEstudiante;
     private rojeru_san.RSButtonRiple btn_modificarEstudiante;

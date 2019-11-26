@@ -65,6 +65,7 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
 
         btn_registrar.setBackground(new java.awt.Color(0, 153, 51));
         btn_registrar.setText("Registar");
+        btn_registrar.setBorderPainted(false);
         btn_registrar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrar.setFocusPainted(false);
         btn_registrar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,8 +123,15 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
         });
 
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
+        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_atras.setBorderPainted(false);
         btn_atras.setColorHover(new java.awt.Color(255, 255, 255));
         btn_atras.setFocusPainted(false);
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
 
         txt_direccion.setForeground(new java.awt.Color(0, 153, 51));
         txt_direccion.setBordeColorFocus(new java.awt.Color(0, 153, 51));
@@ -146,29 +154,23 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
                             .addGroup(PanelBlancoLayout.createSequentialGroup()
                                 .addGap(85, 85, 85)
                                 .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 16, Short.MAX_VALUE))
+                        .addGap(0, 51, Short.MAX_VALUE))
                     .addGroup(PanelBlancoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(PanelBlancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_cedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(PanelBlancoLayout.createSequentialGroup()
+                                .addComponent(lbl_universidadPublica)
+                                .addGap(18, 18, 18)
+                                .addComponent(checkB_universidadPublica, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_cedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_nombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txt_correoEstudiante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txt_telefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_carrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(PanelBlancoLayout.createSequentialGroup()
-                                .addComponent(txt_universidad_P_P, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(40, 40, 40))
-                            .addComponent(txt_direccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(23, 23, 23))
-            .addGroup(PanelBlancoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelBlancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelBlancoLayout.createSequentialGroup()
-                        .addComponent(lbl_universidadPublica)
-                        .addGap(18, 18, 18)
-                        .addComponent(checkB_universidadPublica, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txt_carrera, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_universidad_P_P, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         PanelBlancoLayout.setVerticalGroup(
@@ -197,8 +199,8 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
                 .addGap(19, 19, 19)
                 .addComponent(txt_universidad_P_P, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -304,6 +306,10 @@ public class RegistrarEstudiante extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+    this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_atrasActionPerformed
 
     
     /**

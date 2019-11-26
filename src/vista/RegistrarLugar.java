@@ -59,6 +59,7 @@ public class RegistrarLugar extends javax.swing.JDialog {
 
         btn_registrar.setBackground(new java.awt.Color(0, 153, 51));
         btn_registrar.setText("Registar");
+        btn_registrar.setBorderPainted(false);
         btn_registrar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrar.setFocusPainted(false);
         btn_registrar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,9 +107,15 @@ public class RegistrarLugar extends javax.swing.JDialog {
         checkB_requiere.setFocusable(false);
 
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_atras.setBorderPainted(false);
         btn_atras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_atras.setFocusPainted(false);
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -170,8 +177,8 @@ public class RegistrarLugar extends javax.swing.JDialog {
                     .addComponent(checkB_requiere, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_requiere, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -241,6 +248,10 @@ public class RegistrarLugar extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+    this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_atrasActionPerformed
 
     /**
      * @param args the command line arguments

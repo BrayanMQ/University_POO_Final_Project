@@ -54,6 +54,7 @@ public class ConsultarLugares extends javax.swing.JDialog {
 
         btn_consultar.setBackground(new java.awt.Color(0, 153, 51));
         btn_consultar.setText("Consultar");
+        btn_consultar.setBorderPainted(false);
         btn_consultar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_consultar.setFocusPainted(false);
         btn_consultar.addActionListener(new java.awt.event.ActionListener() {
@@ -63,9 +64,15 @@ public class ConsultarLugares extends javax.swing.JDialog {
         });
 
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_atras.setBorderPainted(false);
         btn_atras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_atras.setFocusPainted(false);
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
 
         cmbx_consulta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos", "Cupos Disponibles" }));
         cmbx_consulta.setColorArrow(new java.awt.Color(0, 153, 51));
@@ -187,6 +194,10 @@ public class ConsultarLugares extends javax.swing.JDialog {
         String columnas[] = {"Identificador", "Nombre", "Requisito", "Cantidad de Cupos Disponibles"};
         jTable_tabla.setModel(new DefaultTableModel(data, columnas));
     }//GEN-LAST:event_btn_consultarActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+    this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_atrasActionPerformed
 
     /**
      * @param args the command line arguments

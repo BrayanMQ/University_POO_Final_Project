@@ -46,6 +46,8 @@ public class RegistrarHoras extends javax.swing.JDialog {
         jPanel1.setFocusable(false);
 
         btn_aceptar.setBackground(new java.awt.Color(0, 153, 0));
+        btn_aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_done_white_18dp.png"))); // NOI18N
+        btn_aceptar.setBorderPainted(false);
         btn_aceptar.setColorHover(new java.awt.Color(0, 102, 0));
         btn_aceptar.setFocusPainted(false);
         btn_aceptar.setFocusable(false);
@@ -56,19 +58,24 @@ public class RegistrarHoras extends javax.swing.JDialog {
         });
 
         btn_cancelar.setBackground(new java.awt.Color(204, 0, 0));
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_close_white_18dp.png"))); // NOI18N
+        btn_cancelar.setBorderPainted(false);
         btn_cancelar.setColorHover(new java.awt.Color(153, 0, 0));
         btn_cancelar.setFocusPainted(false);
         btn_cancelar.setFocusable(false);
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
 
         txt_cedula.setForeground(new java.awt.Color(0, 153, 51));
-        txt_cedula.setText("Cédula del estudiante");
         txt_cedula.setBordeColorFocus(new java.awt.Color(0, 153, 51));
         txt_cedula.setBotonColor(new java.awt.Color(0, 153, 51));
         txt_cedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_cedula.setPlaceholder("Cédula Estudiante");
 
         txt_cantidadHoras.setForeground(new java.awt.Color(0, 153, 51));
-        txt_cantidadHoras.setText("Cantidad de horas");
         txt_cantidadHoras.setBordeColorFocus(new java.awt.Color(0, 153, 51));
         txt_cantidadHoras.setBotonColor(new java.awt.Color(0, 153, 51));
         txt_cantidadHoras.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -159,6 +166,10 @@ public class RegistrarHoras extends javax.swing.JDialog {
             }
         }
     }//GEN-LAST:event_btn_aceptarActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+    this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments

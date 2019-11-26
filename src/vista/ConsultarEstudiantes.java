@@ -57,8 +57,10 @@ public class ConsultarEstudiantes extends javax.swing.JDialog implements IConsta
 
         btn_consultar.setBackground(new java.awt.Color(0, 153, 51));
         btn_consultar.setText("Consultar");
+        btn_consultar.setBorderPainted(false);
         btn_consultar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_consultar.setFocusPainted(false);
+        btn_consultar.setFocusable(false);
         btn_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultarActionPerformed(evt);
@@ -66,13 +68,22 @@ public class ConsultarEstudiantes extends javax.swing.JDialog implements IConsta
         });
 
         btn_atras.setBackground(new java.awt.Color(0, 153, 51));
+        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_atras.setBorderPainted(false);
         btn_atras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_atras.setFocusPainted(false);
+        btn_atras.setFocusable(false);
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
 
         cmbx_consultar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos", "Horas Completadas", "Con Horas en Proceso" }));
         cmbx_consultar.setColorArrow(new java.awt.Color(0, 153, 51));
         cmbx_consultar.setColorBorde(new java.awt.Color(0, 153, 51));
         cmbx_consultar.setColorFondo(new java.awt.Color(0, 153, 51));
+        cmbx_consultar.setFocusable(false);
 
         jTable_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -202,6 +213,10 @@ public class ConsultarEstudiantes extends javax.swing.JDialog implements IConsta
         String columnas[] = {"Cédula", "Nombre", "Correo", "Teléfono", "Lugar", "Horas"};
         jTable_tabla.setModel(new DefaultTableModel(data, columnas));
     }//GEN-LAST:event_btn_consultarActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+    this.dispose();   // TODO add your handling code here:
+    }//GEN-LAST:event_btn_atrasActionPerformed
 
     /**
      * @param args the command line arguments

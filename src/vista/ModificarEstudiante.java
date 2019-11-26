@@ -73,6 +73,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
 
         btn_Modificar.setBackground(new java.awt.Color(0, 153, 51));
         btn_Modificar.setText("Modificar");
+        btn_Modificar.setBorderPainted(false);
         btn_Modificar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_Modificar.setFocusPainted(false);
         btn_Modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -121,9 +122,15 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         txt_universidad_P_P.setPlaceholder("Correo Institucional");
 
         btn_Atras.setBackground(new java.awt.Color(0, 153, 51));
-        btn_Atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_Atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/round_arrow_back_white_18dp.png"))); // NOI18N
+        btn_Atras.setBorderPainted(false);
         btn_Atras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_Atras.setFocusPainted(false);
+        btn_Atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AtrasActionPerformed(evt);
+            }
+        });
 
         txt_direccion.setForeground(new java.awt.Color(0, 153, 51));
         txt_direccion.setBordeColorFocus(new java.awt.Color(0, 153, 51));
@@ -287,6 +294,10 @@ public class ModificarEstudiante extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_btn_ModificarActionPerformed
+
+    private void btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtrasActionPerformed
+    this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_AtrasActionPerformed
 
     /**
      * @param args the command line arguments

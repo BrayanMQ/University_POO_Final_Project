@@ -102,6 +102,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/vista/iconos/round_done_white_18dp.png"/>
             </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
@@ -165,12 +166,16 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/vista/iconos/round_close_white_18dp.png"/>
             </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cancelarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="rojeru_san.RSButtonRiple" name="btn_consultarLugares">
           <Properties>
@@ -178,6 +183,7 @@
               <Color blue="33" green="99" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Consultar Lugares"/>
+            <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="66" red="0" type="rgb"/>
             </Property>

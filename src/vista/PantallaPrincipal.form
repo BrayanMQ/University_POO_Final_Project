@@ -122,7 +122,7 @@
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanel7" pref="412" max="32767" attributes="0"/>
+                          <Component id="jPanel7" pref="413" max="32767" attributes="0"/>
                           <Component id="jPanel5" alignment="0" max="32767" attributes="0"/>
                           <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -238,6 +238,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Registrar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -253,6 +254,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -268,6 +270,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -294,6 +297,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Registrar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -309,6 +313,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -324,6 +329,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -356,6 +362,7 @@
                               <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="consultarEstudiantes" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_consultarLugares" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_consultaEstudiante" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -376,6 +383,8 @@
                           <Component id="consultarEstudiantes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btn_consultarLugares" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btn_consultaEstudiante" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -399,6 +408,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Registrar Horas"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -414,6 +424,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Realizar Matricula"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -440,6 +451,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value=" Consultar Estudiantes"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -455,6 +467,7 @@
                       <Color blue="33" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Consultar Lugares"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="66" red="0" type="rgb"/>
                     </Property>
@@ -462,6 +475,22 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultarLugaresActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="rojeru_san.RSButtonRiple" name="btn_consultaEstudiante">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="99" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Estudiante por ID"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="66" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="focusPainted" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultaEstudianteActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

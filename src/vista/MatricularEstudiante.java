@@ -44,6 +44,7 @@ public class MatricularEstudiante extends javax.swing.JDialog {
 
         btn_guardar.setBackground(new java.awt.Color(0, 153, 0));
         btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_done_white_18dp.png"))); // NOI18N
+        btn_guardar.setBorderPainted(false);
         btn_guardar.setColorHover(new java.awt.Color(0, 102, 0));
         btn_guardar.setFocusPainted(false);
         btn_guardar.setFocusable(false);
@@ -71,12 +72,19 @@ public class MatricularEstudiante extends javax.swing.JDialog {
 
         btn_cancelar.setBackground(new java.awt.Color(204, 0, 0));
         btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_close_white_18dp.png"))); // NOI18N
+        btn_cancelar.setBorderPainted(false);
         btn_cancelar.setColorHover(new java.awt.Color(153, 0, 0));
         btn_cancelar.setFocusPainted(false);
         btn_cancelar.setFocusable(false);
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
 
         btn_consultarLugares.setBackground(new java.awt.Color(0, 153, 51));
         btn_consultarLugares.setText("Consultar Lugares");
+        btn_consultarLugares.setBorderPainted(false);
         btn_consultarLugares.setColorHover(new java.awt.Color(0, 102, 51));
         btn_consultarLugares.setFocusPainted(false);
         btn_consultarLugares.addActionListener(new java.awt.event.ActionListener() {
@@ -187,6 +195,10 @@ public class MatricularEstudiante extends javax.swing.JDialog {
     private void btn_consultarLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarLugaresActionPerformed
         new ConsultarLugares((Frame) getParent(), rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btn_consultarLugaresActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+    this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments

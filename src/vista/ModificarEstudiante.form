@@ -163,6 +163,7 @@
                   <Color blue="33" green="99" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="66" red="0" type="rgb"/>
                 </Property>
@@ -287,13 +288,17 @@
                   <Color blue="33" green="99" red="0" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/vista/iconos/round_arrow_back_white_18dp.png"/>
+                  <Image iconType="3" name="/round_arrow_back_white_18dp.png"/>
                 </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_AtrasActionPerformed"/>
+              </Events>
             </Component>
             <Component class="rojeru_san.RSMTextFull" name="txt_direccion">
               <Properties>
