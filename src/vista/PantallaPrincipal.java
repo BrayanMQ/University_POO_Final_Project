@@ -38,20 +38,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        rSButtonRiple = new rojeru_san.RSButtonRiple();
-        rSButtonRiple3 = new rojeru_san.RSButtonRiple();
-        rSButtonRiple2 = new rojeru_san.RSButtonRiple();
+        btn_registrarLugar = new rojeru_san.RSButtonRiple();
+        btn_modificarLugar = new rojeru_san.RSButtonRiple();
+        btn_EliminarLugar = new rojeru_san.RSButtonRiple();
         jLabel2 = new javax.swing.JLabel();
-        btn_registrar = new rojeru_san.RSButtonRiple();
-        btn_Modificar = new rojeru_san.RSButtonRiple();
-        rSButtonRiple12 = new rojeru_san.RSButtonRiple();
+        btn_registrarEstudiante = new rojeru_san.RSButtonRiple();
+        btn_modificarEstudiante = new rojeru_san.RSButtonRiple();
+        btn_eliminarEstudiante = new rojeru_san.RSButtonRiple();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        rSButtonRiple14 = new rojeru_san.RSButtonRiple();
-        rSButtonRiple13 = new rojeru_san.RSButtonRiple();
+        btn_registrarHoras = new rojeru_san.RSButtonRiple();
+        btn_realizarMatricula = new rojeru_san.RSButtonRiple();
         jLabel5 = new javax.swing.JLabel();
-        rSButtonRiple9 = new rojeru_san.RSButtonRiple();
-        rSButtonRiple4 = new rojeru_san.RSButtonRiple();
+        consultarEstudiantes = new rojeru_san.RSButtonRiple();
+        btn_consultarLugares = new rojeru_san.RSButtonRiple();
         jPanel7 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -94,49 +94,49 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 51));
         jLabel1.setText("Lugares");
 
-        rSButtonRiple.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple.setText("Registrar");
-        rSButtonRiple.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple.setFocusPainted(false);
+        btn_registrarLugar.setBackground(new java.awt.Color(0, 153, 51));
+        btn_registrarLugar.setText("Registrar");
+        btn_registrarLugar.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_registrarLugar.setFocusPainted(false);
 
-        rSButtonRiple3.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple3.setText("Modificar");
-        rSButtonRiple3.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple3.setFocusPainted(false);
+        btn_modificarLugar.setBackground(new java.awt.Color(0, 153, 51));
+        btn_modificarLugar.setText("Modificar");
+        btn_modificarLugar.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_modificarLugar.setFocusPainted(false);
 
-        rSButtonRiple2.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple2.setText("Eliminar");
-        rSButtonRiple2.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple2.setFocusPainted(false);
+        btn_EliminarLugar.setBackground(new java.awt.Color(0, 153, 51));
+        btn_EliminarLugar.setText("Eliminar");
+        btn_EliminarLugar.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_EliminarLugar.setFocusPainted(false);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 51));
         jLabel2.setText("Estudiantes");
 
-        btn_registrar.setBackground(new java.awt.Color(0, 153, 51));
-        btn_registrar.setText("Registrar");
-        btn_registrar.setColorHover(new java.awt.Color(0, 102, 51));
-        btn_registrar.setFocusPainted(false);
-        btn_registrar.addActionListener(new java.awt.event.ActionListener() {
+        btn_registrarEstudiante.setBackground(new java.awt.Color(0, 153, 51));
+        btn_registrarEstudiante.setText("Registrar");
+        btn_registrarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_registrarEstudiante.setFocusPainted(false);
+        btn_registrarEstudiante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_registrarActionPerformed(evt);
+                btn_registrarEstudianteActionPerformed(evt);
             }
         });
 
-        btn_Modificar.setBackground(new java.awt.Color(0, 153, 51));
-        btn_Modificar.setText("Modificar");
-        btn_Modificar.setColorHover(new java.awt.Color(0, 102, 51));
-        btn_Modificar.setFocusPainted(false);
-        btn_Modificar.addActionListener(new java.awt.event.ActionListener() {
+        btn_modificarEstudiante.setBackground(new java.awt.Color(0, 153, 51));
+        btn_modificarEstudiante.setText("Modificar");
+        btn_modificarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_modificarEstudiante.setFocusPainted(false);
+        btn_modificarEstudiante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ModificarActionPerformed(evt);
+                btn_modificarEstudianteActionPerformed(evt);
             }
         });
 
-        rSButtonRiple12.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple12.setText("Eliminar");
-        rSButtonRiple12.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple12.setFocusPainted(false);
+        btn_eliminarEstudiante.setBackground(new java.awt.Color(0, 153, 51));
+        btn_eliminarEstudiante.setText("Eliminar");
+        btn_eliminarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_eliminarEstudiante.setFocusPainted(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -145,18 +145,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonRiple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_registrarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(rSButtonRiple2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_EliminarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addGap(61, 61, 61))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonRiple12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_registrarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_eliminarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_modificarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_modificarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -165,19 +165,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonRiple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_registrarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_modificarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSButtonRiple2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_EliminarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_registrarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_modificarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonRiple12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_eliminarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -187,29 +187,29 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 153, 51));
         jLabel4.setText("Acciones");
 
-        rSButtonRiple14.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple14.setText("Registrar Horas");
-        rSButtonRiple14.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple14.setFocusPainted(false);
+        btn_registrarHoras.setBackground(new java.awt.Color(0, 153, 51));
+        btn_registrarHoras.setText("Registrar Horas");
+        btn_registrarHoras.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_registrarHoras.setFocusPainted(false);
 
-        rSButtonRiple13.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple13.setText("Realizar Matricula");
-        rSButtonRiple13.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple13.setFocusPainted(false);
+        btn_realizarMatricula.setBackground(new java.awt.Color(0, 153, 51));
+        btn_realizarMatricula.setText("Realizar Matricula");
+        btn_realizarMatricula.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_realizarMatricula.setFocusPainted(false);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 51));
         jLabel5.setText("Consultas");
 
-        rSButtonRiple9.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple9.setText(" Consultar Estudiantes");
-        rSButtonRiple9.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple9.setFocusPainted(false);
+        consultarEstudiantes.setBackground(new java.awt.Color(0, 153, 51));
+        consultarEstudiantes.setText(" Consultar Estudiantes");
+        consultarEstudiantes.setColorHover(new java.awt.Color(0, 102, 51));
+        consultarEstudiantes.setFocusPainted(false);
 
-        rSButtonRiple4.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple4.setText("Consultar Lugares");
-        rSButtonRiple4.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple4.setFocusPainted(false);
+        btn_consultarLugares.setBackground(new java.awt.Color(0, 153, 51));
+        btn_consultarLugares.setText("Consultar Lugares");
+        btn_consultarLugares.setColorHover(new java.awt.Color(0, 102, 51));
+        btn_consultarLugares.setFocusPainted(false);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -220,11 +220,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(rSButtonRiple13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(rSButtonRiple14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_realizarMatricula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_registrarHoras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5)
-                    .addComponent(rSButtonRiple9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(consultarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -233,15 +233,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonRiple14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_registrarHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonRiple13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_realizarMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonRiple9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(consultarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_consultarLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -326,12 +326,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
+    private void btn_registrarEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarEstudianteActionPerformed
         RegistrarEstudiante registrarEstudiante = new RegistrarEstudiante(this, rootPaneCheckingEnabled);
         registrarEstudiante.setVisible(true);
-    }//GEN-LAST:event_btn_registrarActionPerformed
+    }//GEN-LAST:event_btn_registrarEstudianteActionPerformed
 
-    private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
+    private void btn_modificarEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarEstudianteActionPerformed
         
         String id = JOptionPane.showInputDialog(this, "Indique la cédula del estudiante que desea modificar.", "Modificar estudiante", JOptionPane.QUESTION_MESSAGE);
         
@@ -348,7 +348,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                  
              }
         }     
-    }//GEN-LAST:event_btn_ModificarActionPerformed
+    }//GEN-LAST:event_btn_modificarEstudianteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,8 +386,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojeru_san.RSButtonRiple btn_Modificar;
-    private rojeru_san.RSButtonRiple btn_registrar;
+    private rojeru_san.RSButtonRiple btn_EliminarLugar;
+    private rojeru_san.RSButtonRiple btn_consultarLugares;
+    private rojeru_san.RSButtonRiple btn_eliminarEstudiante;
+    private rojeru_san.RSButtonRiple btn_modificarEstudiante;
+    private rojeru_san.RSButtonRiple btn_modificarLugar;
+    private rojeru_san.RSButtonRiple btn_realizarMatricula;
+    private rojeru_san.RSButtonRiple btn_registrarEstudiante;
+    private rojeru_san.RSButtonRiple btn_registrarHoras;
+    private rojeru_san.RSButtonRiple btn_registrarLugar;
+    private rojeru_san.RSButtonRiple consultarEstudiantes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -400,13 +408,5 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private rojeru_san.RSButtonRiple rSButtonRiple;
-    private rojeru_san.RSButtonRiple rSButtonRiple12;
-    private rojeru_san.RSButtonRiple rSButtonRiple13;
-    private rojeru_san.RSButtonRiple rSButtonRiple14;
-    private rojeru_san.RSButtonRiple rSButtonRiple2;
-    private rojeru_san.RSButtonRiple rSButtonRiple3;
-    private rojeru_san.RSButtonRiple rSButtonRiple4;
-    private rojeru_san.RSButtonRiple rSButtonRiple9;
     // End of variables declaration//GEN-END:variables
 }

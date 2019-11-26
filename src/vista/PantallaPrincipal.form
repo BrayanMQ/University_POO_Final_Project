@@ -176,21 +176,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSButtonRiple" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_registrarLugar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="rSButtonRiple2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_EliminarLugar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="btn_registrar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSButtonRiple12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btn_Modificar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btn_registrarEstudiante" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btn_eliminarEstudiante" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btn_modificarEstudiante" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="rSButtonRiple3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_modificarLugar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -202,19 +202,19 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_registrarLugar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_modificarLugar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_EliminarLugar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btn_registrar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_registrarEstudiante" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btn_Modificar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_modificarEstudiante" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple12" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_eliminarEstudiante" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="14" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -232,7 +232,7 @@
                     <Property name="text" type="java.lang.String" value="Lugares"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_registrarLugar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -244,7 +244,7 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple3">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_modificarLugar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -256,7 +256,7 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple2">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_EliminarLugar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -279,7 +279,7 @@
                     <Property name="text" type="java.lang.String" value="Estudiantes"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="btn_registrar">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_registrarEstudiante">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -291,10 +291,10 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_registrarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_registrarEstudianteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="btn_Modificar">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_modificarEstudiante">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -306,10 +306,10 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ModificarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_modificarEstudianteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple12">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_eliminarEstudiante">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -338,12 +338,12 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Component id="rSButtonRiple13" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rSButtonRiple14" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_realizarMatricula" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_registrarHoras" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="rSButtonRiple9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="rSButtonRiple4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="consultarEstudiantes" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_consultarLugares" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -355,15 +355,15 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple14" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_registrarHoras" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple13" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_realizarMatricula" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple9" min="-2" max="-2" attributes="0"/>
+                          <Component id="consultarEstudiantes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rSButtonRiple4" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_consultarLugares" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -381,7 +381,7 @@
                     <Property name="text" type="java.lang.String" value="Acciones"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple14">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_registrarHoras">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -393,7 +393,7 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple13">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_realizarMatricula">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -416,7 +416,7 @@
                     <Property name="text" type="java.lang.String" value="Consultas"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple9">
+                <Component class="rojeru_san.RSButtonRiple" name="consultarEstudiantes">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
@@ -428,7 +428,7 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple4">
+                <Component class="rojeru_san.RSButtonRiple" name="btn_consultarLugares">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="0" type="rgb"/>
