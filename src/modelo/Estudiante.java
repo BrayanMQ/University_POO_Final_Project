@@ -1,7 +1,7 @@
 
 package modelo;
 
-public abstract class Estudiante {
+public abstract class Estudiante implements IConstants{
     protected String nombre;
     protected int cedula;
     protected String correo;
@@ -9,7 +9,7 @@ public abstract class Estudiante {
     protected String direccion;
     protected String carrera;
     protected int cantidadHorasCompletadas;
-    protected Lugar lugarServicioSocial;
+    protected int lugarServicioSocial;
     
     public Estudiante(String pNombre, int pCedula, String pCorreo, int pTelefono, String pCarrera) {
         this.nombre = pNombre;
@@ -17,6 +17,8 @@ public abstract class Estudiante {
         this.correo = pCorreo;
         this.telefono = pTelefono;
         this.carrera = pCarrera;
+        this.lugarServicioSocial = 0;
+        this.cantidadHorasCompletadas = 0;
     }
 
     public String getNombre() {
@@ -44,10 +46,10 @@ public abstract class Estudiante {
     }
 
     public int getCantidadHorasCompletadas() {
-        return cantidadHorasCompletadas;
+        return cantidadHorasCompletadas - HORAS_DE_SERVICIO;
     }
 
-    public Lugar getLugarServicioSocial() {
+    public int getLugarServicioSocial() {
         return lugarServicioSocial;
     }
 
@@ -79,6 +81,9 @@ public abstract class Estudiante {
         this.cantidadHorasCompletadas = cantidadHorasCompletadas;
     }
     
+    public void registrarHoras(int pCantidadHoras){
+        this.cantidadHorasCompletadas += pCantidadHoras;
+    }
     
     
     
