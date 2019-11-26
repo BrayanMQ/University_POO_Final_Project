@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package vista;
+import controlador.Controlador;
+import javax.swing.JOptionPane;
+import modelo.Estudiante;
+import modelo.Lugar;
 
-/**
- *
- * @author dark1
- */
 public class MatricularEstudiante extends javax.swing.JDialog {
 
     /**
@@ -45,6 +45,11 @@ public class MatricularEstudiante extends javax.swing.JDialog {
         btn_guardar.setColorHover(new java.awt.Color(0, 102, 0));
         btn_guardar.setFocusPainted(false);
         btn_guardar.setFocusable(false);
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarActionPerformed(evt);
+            }
+        });
 
         txt_cedula.setForeground(new java.awt.Color(0, 153, 51));
         txt_cedula.setBordeColorFocus(new java.awt.Color(0, 153, 51));
@@ -128,6 +133,45 @@ public class MatricularEstudiante extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
+        String cedula = txt_cedula.getText();
+        String idLugar = txt_idLugar.getText();
+        
+        Estudiante estudiante = Controlador.getSingletonInstance().getGestorEstudiantes().buscarEstudiante(cedula);
+        Lugar lugar = Controlador.getSingletonInstance().getGestorLugares().buscarLugar(idLugar);
+        
+        if (estudiante != null) {
+            
+            if (lugar != null) {
+                
+                if (estudiante.getLugarServicioSocial() != 0) {
+                    
+                    if (lugar.getCuposRestantes() != 0) {
+                        
+                        estudiante.setLugarServicioSocial(lugar.getId());
+                        lugar.getListaEstudiantes().add(estudiante.getCedula());
+                         JOptionPane.showMessageDialog(this, "Se ha matriculado con éxito el estudiante con cédula " + cedula + " en " + lugar.getNombre() + ".", "Matricular estudiante", JOptionPane.INFORMATION_MESSAGE);
+                         this.dispose();
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(this, "El lugar con identificador " + idLugar + " no cuenta con cupos disponibles.", "Matricular estudiante", JOptionPane.ERROR_MESSAGE);
+                    }
+                    
+                } else {
+                    JOptionPane.showMessageDialog(this, "El estudiante con cédula " + cedula + " ya se encuentra matriculado.", "Matricular estudiante", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "No se ha encontrado el lugar con identificador " + idLugar + ".", "Matricular estudiante", JOptionPane.ERROR_MESSAGE);
+            }
+            
+        } else {
+             JOptionPane.showMessageDialog(this, "No se ha encontrado el estudiante con cédula " + cedula + ".", "Matricular estudiante", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+    }//GEN-LAST:event_btn_guardarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -34,37 +34,48 @@ public class GestorEstudiantes {
         
             for (int i = 0; i < Controlador.getSingletonInstance().getListaEstudiantesRegistrados().size(); i++) {
                 if (Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).getCedula() == Integer.parseInt(pCedula)) {
-                    Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setNombre(pNombre);
-                    Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setCorreo(pCorreoEstudiante);
-                    Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setTelefono(Integer.parseInt(pTelefono));
-                    Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setCarrera(pCarrera);
-                    Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setDireccion(pDireccion);
                     
-                    if (pUniversidadPublica) {
-                         ((EstudianteUPublica)Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i)).setCorreoInstitucional(pUniversidadDato);
-                    } else {
+                    if (Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i) instanceof EstudianteUPublica && pUniversidadPublica == true) {
+                        
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setNombre(pNombre);
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setCorreo(pCorreoEstudiante);
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setTelefono(Integer.parseInt(pTelefono));
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setCarrera(pCarrera);
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setDireccion(pDireccion);
+                        ((EstudianteUPublica)Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i)).setCorreoInstitucional(pUniversidadDato);  
+                        return true;
+                        
+                    } else if (Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i) instanceof EstudianteUPrivada && pUniversidadPublica == false){
+                    
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setNombre(pNombre);
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setCorreo(pCorreoEstudiante);
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setTelefono(Integer.parseInt(pTelefono));
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setCarrera(pCarrera);
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).setDireccion(pDireccion);
                         ((EstudianteUPrivada)Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i)).setDineroRequerido(Integer.parseInt(pUniversidadDato));
+                        return true;
+                        
+                    } else {
+
+                        //Creador de estudiantes 
+                        EstudianteFactory crearEstudiante = new EstudianteFactory();
+
+                        //Estudiante posible a insertar
+                        Estudiante estudiante = (Estudiante) crearEstudiante.crear(pCarrera, pCedula,
+                                pCorreoEstudiante, pUniversidadPublica, pNombre,
+                                pTelefono, pUniversidadDato, pDireccion);
+                        
+                        estudiante.setCantidadHorasCompletadas(Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).getCantidadHorasCompletadas());
+                        estudiante.setLugarServicioSocial(Controlador.getSingletonInstance().getListaEstudiantesRegistrados().get(i).getLugarServicioSocial());
+                        
+                        Controlador.getSingletonInstance().getListaEstudiantesRegistrados().set(i, estudiante);
+                        return true;
+                        
                     }
+
                 }
             }
-    
-            
-        //Creador de estudiantes 
-        EstudianteFactory crearEstudiante = new EstudianteFactory();
-        
-        //Estudiante posible a insertar
-        Estudiante estudiante = (Estudiante)crearEstudiante.crear(pCarrera, pCedula, 
-                pCorreoEstudiante, pUniversidadPublica, pNombre, 
-                pTelefono, pUniversidadDato, pDireccion);
-        
-        //Si el estudiante no está en lista, lo agrega
-        if (!Controlador.getSingletonInstance().getListaEstudiantesRegistrados().contains(estudiante)) {
-            
-            Controlador.getSingletonInstance().getListaEstudiantesRegistrados().add(estudiante);
-            return true;
-            
-        }
-        return false;       
+        return false;   
     }
     
     public Estudiante buscarEstudiante(String pCedula){

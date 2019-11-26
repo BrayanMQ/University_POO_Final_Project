@@ -8,6 +8,7 @@ package vista;
 import controlador.Controlador;
 import javax.swing.JOptionPane;
 import modelo.Estudiante;
+import modelo.Lugar;
 
 /**
  *
@@ -108,11 +109,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btn_modificarLugar.setText("Modificar");
         btn_modificarLugar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_modificarLugar.setFocusPainted(false);
+        btn_modificarLugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificarLugarActionPerformed(evt);
+            }
+        });
 
         btn_EliminarLugar.setBackground(new java.awt.Color(0, 153, 51));
         btn_EliminarLugar.setText("Eliminar");
         btn_EliminarLugar.setColorHover(new java.awt.Color(0, 102, 51));
         btn_EliminarLugar.setFocusPainted(false);
+        btn_EliminarLugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EliminarLugarActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 51));
@@ -142,6 +153,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btn_eliminarEstudiante.setText("Eliminar");
         btn_eliminarEstudiante.setColorHover(new java.awt.Color(0, 102, 51));
         btn_eliminarEstudiante.setFocusPainted(false);
+        btn_eliminarEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarEstudianteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -196,11 +212,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btn_registrarHoras.setText("Registrar Horas");
         btn_registrarHoras.setColorHover(new java.awt.Color(0, 102, 51));
         btn_registrarHoras.setFocusPainted(false);
+        btn_registrarHoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registrarHorasActionPerformed(evt);
+            }
+        });
 
         btn_realizarMatricula.setBackground(new java.awt.Color(0, 153, 51));
         btn_realizarMatricula.setText("Realizar Matricula");
         btn_realizarMatricula.setColorHover(new java.awt.Color(0, 102, 51));
         btn_realizarMatricula.setFocusPainted(false);
+        btn_realizarMatricula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_realizarMatriculaActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 51));
@@ -297,7 +323,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(14, 14, 14))
@@ -358,6 +384,88 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void btn_registrarLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarLugarActionPerformed
         new RegistrarLugar(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btn_registrarLugarActionPerformed
+
+    private void btn_modificarLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarLugarActionPerformed
+        String id = JOptionPane.showInputDialog(this, "Indique el identificador del lugar que desea modificar.", "Modificar lugar", JOptionPane.QUESTION_MESSAGE);
+        
+        if (id != null ) {//Si no le da al botón cancelar
+             Lugar lugar = Controlador.getSingletonInstance().getGestorLugares().buscarLugar(id);
+             
+             if (lugar != null) {
+                
+                 new ModificarLugar(this, rootPaneCheckingEnabled, lugar).setVisible(true);
+                 
+             } else {
+             
+                 JOptionPane.showMessageDialog(this, "No se ha encontrado el lugar con identificador " + id + ".", "Modificar lugar", JOptionPane.INFORMATION_MESSAGE);
+                 
+             }
+        } 
+    }//GEN-LAST:event_btn_modificarLugarActionPerformed
+
+    private void btn_eliminarEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarEstudianteActionPerformed
+        String id = JOptionPane.showInputDialog(this, "Indique la cédula del estudiante que desea eliminar.", "Eliminar estudiante", JOptionPane.QUESTION_MESSAGE);
+        
+        if (id != null ) {//Si no le da al botón cancelar
+             Estudiante estudiante = Controlador.getSingletonInstance().getGestorEstudiantes().buscarEstudiante(id);
+             
+             if (estudiante != null) {
+                 int Idlugar = estudiante.getLugarServicioSocial();
+                 
+                 if (Idlugar != 0) {
+                     Lugar lugar = Controlador.getSingletonInstance().getGestorLugares().buscarLugar(String.valueOf(id));
+                     
+                     for (int i = 0; i < lugar.getListaEstudiantes().size(); i++) {
+                         if (lugar.getListaEstudiantes().get(i) == Integer.parseInt(id)) {
+                             lugar.getListaEstudiantes().remove(i);
+                         }
+                     }  
+                 }            
+                 Controlador.getSingletonInstance().getGestorEstudiantes().eliminarEstudiante(id);
+                 JOptionPane.showMessageDialog(this, "Se eliminó el estudiante con cédula " + id + ".", "Eliminar estudiante", JOptionPane.INFORMATION_MESSAGE);
+                 
+             } else {
+             
+                 JOptionPane.showMessageDialog(this, "No se ha encontrado el estudiante con cédula " + id + ".", "Modificar estudiante", JOptionPane.INFORMATION_MESSAGE);
+                 
+             }
+        }   
+    }//GEN-LAST:event_btn_eliminarEstudianteActionPerformed
+
+    private void btn_EliminarLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarLugarActionPerformed
+        String id = JOptionPane.showInputDialog(this, "Indique el identificador del lugar que desea eliminar.", "Eliminar lugar", JOptionPane.QUESTION_MESSAGE);
+        
+        if (id != null ) {//Si no le da al botón cancelar
+             Lugar lugar = Controlador.getSingletonInstance().getGestorLugares().buscarLugar(id);
+             
+             if (lugar != null) {
+                
+                 for (Integer cedula : lugar.getListaEstudiantes()) {
+                     
+                    int idEstudiante = cedula;
+                    
+                    Estudiante estudianteACambiar = Controlador.getSingletonInstance().getGestorEstudiantes().buscarEstudiante(String.valueOf(idEstudiante));
+                    estudianteACambiar.setLugarServicioSocial(0);
+                     
+                 }
+                 
+                 Controlador.getSingletonInstance().getGestorLugares().eliminarLugar(id);
+                 
+             } else {
+             
+                 JOptionPane.showMessageDialog(this, "No se ha encontrado el lugar con identificador " + id + ".", "Eliminar lugar", JOptionPane.INFORMATION_MESSAGE);
+                 
+             }
+        } 
+    }//GEN-LAST:event_btn_EliminarLugarActionPerformed
+
+    private void btn_registrarHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarHorasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_registrarHorasActionPerformed
+
+    private void btn_realizarMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_realizarMatriculaActionPerformed
+        new MatricularEstudiante(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_btn_realizarMatriculaActionPerformed
 
     /**
      * @param args the command line arguments

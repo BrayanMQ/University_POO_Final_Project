@@ -5,6 +5,11 @@
  */
 package vista;
 
+import controlador.Controlador;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import modelo.Lugar;
+
 /**
  *
  * @author dark1
@@ -14,9 +19,18 @@ public class ModificarLugar extends javax.swing.JDialog {
     /**
      * Creates new form ModificarLugar
      */
-    public ModificarLugar(java.awt.Frame parent, boolean modal) {
+    
+    private static Lugar lugar;
+    
+    public ModificarLugar(java.awt.Frame parent, boolean modal, Lugar pLugar) {
         super(parent, modal);
+        txt_id.setText(String.valueOf(pLugar.getId()));
+        txt_nombre.setText(pLugar.getNombre());
+        txt_correo.setText(pLugar.getCorreo());
+        txt_direccion.setText(pLugar.getCorreo());
+        txt_telefono.setText(String.valueOf(pLugar.getTelefono()));
         initComponents();
+        txt_id.setEnabled(false);
     }
 
     /**
@@ -30,18 +44,15 @@ public class ModificarLugar extends javax.swing.JDialog {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        rSButtonRiple3 = new rojeru_san.RSButtonRiple();
-        rSMTextFull1 = new rojeru_san.RSMTextFull();
-        rSMTextFull2 = new rojeru_san.RSMTextFull();
-        rSMTextFull3 = new rojeru_san.RSMTextFull();
-        rSMTextFull4 = new rojeru_san.RSMTextFull();
-        rSMTextFull5 = new rojeru_san.RSMTextFull();
-        rSComboMetro1 = new rojerusan.RSComboMetro();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        rSSwitch1 = new rojerusan.RSSwitch();
+        lbl_error = new javax.swing.JLabel();
+        modificar = new rojeru_san.RSButtonRiple();
+        txt_nombre = new rojeru_san.RSMTextFull();
+        txt_id = new rojeru_san.RSMTextFull();
+        txt_direccion = new rojeru_san.RSMTextFull();
+        txt_telefono = new rojeru_san.RSMTextFull();
+        txt_correo = new rojeru_san.RSMTextFull();
         rSButtonRiple4 = new rojeru_san.RSButtonRiple();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -49,62 +60,52 @@ public class ModificarLugar extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel3.setText("Modificar Lugar");
+        lbl_error.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lbl_error.setForeground(new java.awt.Color(0, 153, 51));
 
-        rSButtonRiple3.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonRiple3.setText("Modificar");
-        rSButtonRiple3.setColorHover(new java.awt.Color(0, 102, 51));
-        rSButtonRiple3.setFocusPainted(false);
+        modificar.setBackground(new java.awt.Color(0, 153, 51));
+        modificar.setText("Modificar");
+        modificar.setColorHover(new java.awt.Color(0, 102, 51));
+        modificar.setFocusPainted(false);
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
 
-        rSMTextFull1.setForeground(new java.awt.Color(0, 153, 51));
-        rSMTextFull1.setBordeColorFocus(new java.awt.Color(0, 153, 51));
-        rSMTextFull1.setBotonColor(new java.awt.Color(0, 153, 51));
-        rSMTextFull1.setPlaceholder("Nombre");
+        txt_nombre.setForeground(new java.awt.Color(0, 153, 51));
+        txt_nombre.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_nombre.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_nombre.setPlaceholder("Nombre");
 
-        rSMTextFull2.setForeground(new java.awt.Color(0, 153, 51));
-        rSMTextFull2.setBordeColorFocus(new java.awt.Color(0, 153, 51));
-        rSMTextFull2.setBotonColor(new java.awt.Color(0, 153, 51));
-        rSMTextFull2.setPlaceholder("Identificador");
+        txt_id.setForeground(new java.awt.Color(0, 153, 51));
+        txt_id.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_id.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_id.setPlaceholder("Identificador");
 
-        rSMTextFull3.setForeground(new java.awt.Color(0, 153, 51));
-        rSMTextFull3.setBordeColorFocus(new java.awt.Color(0, 153, 51));
-        rSMTextFull3.setBotonColor(new java.awt.Color(0, 153, 51));
-        rSMTextFull3.setPlaceholder("Dirección");
+        txt_direccion.setForeground(new java.awt.Color(0, 153, 51));
+        txt_direccion.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_direccion.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_direccion.setPlaceholder("Dirección");
 
-        rSMTextFull4.setForeground(new java.awt.Color(0, 153, 51));
-        rSMTextFull4.setBordeColorFocus(new java.awt.Color(0, 153, 51));
-        rSMTextFull4.setBotonColor(new java.awt.Color(0, 153, 51));
-        rSMTextFull4.setPlaceholder("Teléfono");
+        txt_telefono.setForeground(new java.awt.Color(0, 153, 51));
+        txt_telefono.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_telefono.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_telefono.setPlaceholder("Teléfono");
 
-        rSMTextFull5.setForeground(new java.awt.Color(0, 153, 51));
-        rSMTextFull5.setBordeColorFocus(new java.awt.Color(0, 153, 51));
-        rSMTextFull5.setBotonColor(new java.awt.Color(0, 153, 51));
-        rSMTextFull5.setPlaceholder("Correo");
-
-        rSComboMetro1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Municipalidad", "Institucion Educativa", "Albergue", "Asilo" }));
-        rSComboMetro1.setColorArrow(new java.awt.Color(0, 153, 51));
-        rSComboMetro1.setColorBorde(new java.awt.Color(0, 153, 51));
-        rSComboMetro1.setColorFondo(new java.awt.Color(0, 153, 51));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel4.setText("Tipo de Lugar");
-        jLabel4.setToolTipText("");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 153, 51));
-        jLabel5.setText("Requiere....");
-
-        rSSwitch1.setActivado(false);
-        rSSwitch1.setColorFondoActivado(new java.awt.Color(0, 153, 51));
-        rSSwitch1.setFocusable(false);
+        txt_correo.setForeground(new java.awt.Color(0, 153, 51));
+        txt_correo.setBordeColorFocus(new java.awt.Color(0, 153, 51));
+        txt_correo.setBotonColor(new java.awt.Color(0, 153, 51));
+        txt_correo.setPlaceholder("Correo");
 
         rSButtonRiple4.setBackground(new java.awt.Color(0, 153, 51));
         rSButtonRiple4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/round_arrow_back_white_18dp.png"))); // NOI18N
         rSButtonRiple4.setColorHover(new java.awt.Color(0, 102, 51));
         rSButtonRiple4.setFocusPainted(false);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel4.setText("Modificar Lugar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -113,60 +114,46 @@ public class ModificarLugar extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSMTextFull2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_id, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(txt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_correo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_telefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
                         .addComponent(jLabel4)
-                        .addGap(10, 10, 10)
-                        .addComponent(rSComboMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(8, 8, 8))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(rSSwitch1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(rSButtonRiple4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSMTextFull2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSMTextFull1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSMTextFull3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSMTextFull4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSMTextFull5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(rSSwitch1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(rSButtonRiple3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addComponent(lbl_error, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -180,7 +167,9 @@ public class ModificarLugar extends javax.swing.JDialog {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -198,6 +187,44 @@ public class ModificarLugar extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+     boolean error = false;
+        String mensajeError = "";
+        lbl_error.setText("");
+        ArrayList<String> listaDatos = new ArrayList<>();
+        listaDatos.add(txt_correo.getText());
+        listaDatos.add(txt_direccion.getText());
+        listaDatos.add(txt_nombre.getText());
+        listaDatos.add(txt_telefono.getText());
+        if (!Controlador.getSingletonInstance().getValidacion().validarDatoVacio(listaDatos)) {
+            mensajeError += "No se debe dejar espacios en blanco.\n";
+            lbl_error.setText(mensajeError);
+        }else{
+            if (!Controlador.getSingletonInstance().getValidacion().validarCorreo(txt_correo.getText())) {
+                mensajeError += "El correo del estudiante no es válido.\n";
+                lbl_error.setText(mensajeError);
+                error = true;
+            }
+            if (!Controlador.getSingletonInstance().getValidacion().validarTelefono(txt_telefono.getText())) {
+                mensajeError += "El teléfono debe contener 8 dígitos.\n";
+                lbl_error.setText(mensajeError);
+                error = true;
+            }
+            if (!error) {
+                if (Controlador.getSingletonInstance().getGestorLugares().modificarLugar(txt_correo.getText(), 
+                        txt_nombre.getText(), txt_direccion.getText(), txt_telefono.getText(), lugar.getId())) {
+                    JOptionPane.showMessageDialog(this, "Se modificó correctamente el lugar.", "Modificación exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(this, "No se modificó correctamente el lugar.", "Modificación fallida", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }
+            }
+            
+
+        }
+    }//GEN-LAST:event_modificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,7 +256,7 @@ public class ModificarLugar extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ModificarLugar dialog = new ModificarLugar(new javax.swing.JFrame(), true);
+                ModificarLugar dialog = new ModificarLugar(new javax.swing.JFrame(), true, lugar);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -242,19 +269,16 @@ public class ModificarLugar extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private rojeru_san.RSButtonRiple rSButtonRiple3;
+    private javax.swing.JLabel lbl_error;
+    private rojeru_san.RSButtonRiple modificar;
     private rojeru_san.RSButtonRiple rSButtonRiple4;
-    private rojerusan.RSComboMetro rSComboMetro1;
-    private rojeru_san.RSMTextFull rSMTextFull1;
-    private rojeru_san.RSMTextFull rSMTextFull2;
-    private rojeru_san.RSMTextFull rSMTextFull3;
-    private rojeru_san.RSMTextFull rSMTextFull4;
-    private rojeru_san.RSMTextFull rSMTextFull5;
-    private rojerusan.RSSwitch rSSwitch1;
+    private rojeru_san.RSMTextFull txt_correo;
+    private rojeru_san.RSMTextFull txt_direccion;
+    private rojeru_san.RSMTextFull txt_id;
+    private rojeru_san.RSMTextFull txt_nombre;
+    private rojeru_san.RSMTextFull txt_telefono;
     // End of variables declaration//GEN-END:variables
 }

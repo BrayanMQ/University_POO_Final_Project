@@ -11,7 +11,7 @@ public abstract class Lugar implements IConstants{
     protected String direccion;
     protected int telefono;
     protected String correo;
-    protected ArrayList<Estudiante> listaEstudiantes;
+    protected ArrayList<Integer> listaEstudiantes;
     protected int cuposDisponibles;
     
     public Lugar(String nombre, String direccion, int telefono, String correo) {
@@ -64,16 +64,20 @@ public abstract class Lugar implements IConstants{
         this.correo = correo;
     }
 
-    public ArrayList<Estudiante> getListaEstudiantes() {
+    public ArrayList<Integer> getListaEstudiantes() {
         return listaEstudiantes;
     }
 
-    public void setListaEstudiantes(ArrayList<Estudiante> listaEstudiantes) {
+    public void setListaEstudiantes(ArrayList<Integer> listaEstudiantes) {
         this.listaEstudiantes = listaEstudiantes;
     }
 
     public int getCuposDisponibles() {
         return cuposDisponibles;
+    }
+    
+    public int getCuposRestantes(){
+        return cuposDisponibles - listaEstudiantes.size();
     }
 
     public void setCuposDisponibles(int cuposDisponibles) {

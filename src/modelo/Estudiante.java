@@ -53,6 +53,10 @@ public abstract class Estudiante implements IConstants{
         return lugarServicioSocial;
     }
 
+    public void setLugarServicioSocial(int lugarServicioSocial) {
+        this.lugarServicioSocial = lugarServicioSocial;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

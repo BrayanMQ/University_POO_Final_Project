@@ -33,6 +33,7 @@ public class ModificarEstudiante extends javax.swing.JDialog {
         }
         
         initComponents();
+        txt_cedula.setEnabled(false);
     }
 
     /**
@@ -273,14 +274,13 @@ public class ModificarEstudiante extends javax.swing.JDialog {
                 }
             }
             if (!error) {
-                if (!Controlador.getSingletonInstance().getGestorEstudiantes().modificarEstudiante(txt_carrera.getText(),
+                if (Controlador.getSingletonInstance().getGestorEstudiantes().modificarEstudiante(txt_carrera.getText(),
                     txt_cedula.getText(), txt_correoEstudiante.getText(), txt_nombre.getText(), txt_telefono.getText(),
                     txt_universidad_P_P.getText(), checkB_universidadPublica.isActivado(), txt_direccion.getText())) {
-                mensajeError += "El estudiante ya está registrado.\n";
-                lbl_error.setText(mensajeError);
+                    JOptionPane.showMessageDialog(this, "Se modificó correctamente al estudiante.", "Modificación exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
             }else{
-                JOptionPane.showMessageDialog(this, "Se registró correctamente al estudiante.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
+                JOptionPane.showMessageDialog(this, "No se modificó correctamente al estudiante.", "Modificación fallida", JOptionPane.INFORMATION_MESSAGE);
             }
         }
         
